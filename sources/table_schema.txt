@@ -1,0 +1,87 @@
+Table: KPIs for Ecommerce
+ my_id: my_id_kpi_id1 Column: kpi_id Type: INTEGER Description: Unique identifier for the KPI
+ my_id: my_id_kpi_name2 Column: kpi_name Type: VARCHAR Description: Name of the KPI
+ my_id: my_id_kpi_value3 Column: kpi_value Type: FLOAT Description: Value of the KPI
+ my_id: my_id_kpi_description4 Column: kpi_description Type: TEXT Description: Description of the KPI
+Table: distribution_centers
+ my_id: distribution_centers_id_1 Column: id Type: INTEGER Description: Primary key
+ my_id: distribution_centers_name_2 Column: name Type: TEXT Description: Name of the distribution center
+ my_id: distribution_centers_latitude_3 Column: latitude Type: REAL Description: Latitude coordinate of the distribution center
+ my_id: distribution_centers_longitude_4 Column: longitude Type: REAL Description: Longitude coordinate of the distribution center
+ my_id: distribution_centers_distribution_center_geom_5 Column: distribution_center_geom Type: TEXT Description: Geometry data of the distribution center
+Table: events
+ my_id: events_id_1 Column: id Type: INTEGER Description: Primary key
+ my_id: events_user_id_2 Column: user_id Type: INTEGER Description: Foreign key to user
+ my_id: events_sequence_number_3 Column: sequence_number Type: INTEGER Description: Sequence number of the event
+ my_id: events_session_id_4 Column: session_id Type: TEXT Description: Session identifier
+ my_id: events_created_at_5 Column: created_at Type: TIMESTAMP Description: Event creation timestamp
+ my_id: events_ip_address_6 Column: ip_address Type: TEXT Description: IP address of the event
+ my_id: events_city_7 Column: city Type: TEXT Description: City of the event origin
+ my_id: events_state_8 Column: state Type: TEXT Description: State of the event origin
+ my_id: events_postal_code_9 Column: postal_code Type: TEXT Description: Postal code of the event origin
+ my_id: events_browser_10 Column: browser Type: TEXT Description: Browser used during the event
+ my_id: events_traffic_source_11 Column: traffic_source Type: TEXT Description: Traffic source of the event
+ my_id: events_uri_12 Column: uri Type: TEXT Description: URI accessed during the event
+ my_id: events_event_type_13 Column: event_type Type: TEXT Description: Type of the event
+Table: inventory_items
+ my_id: id_002 Column: id Type: INTEGER Description: ID of the inventory item
+ my_id: product_id_003 Column: product_id Type: INTEGER Description: ID of the product
+ my_id: created_at_004 Column: created_at Type: TIMESTAMP Description: Timestamp when the item was created
+ my_id: sold_at_005 Column: sold_at Type: TIMESTAMP Description: Timestamp when the item was sold
+ my_id: cost_006 Column: cost Type: REAL Description: Cost of the item
+ my_id: product_category_007 Column: product_category Type: TEXT Description: Category of the product
+ my_id: product_name_008 Column: product_name Type: TEXT Description: Name of the product
+ my_id: product_brand_009 Column: product_brand Type: TEXT Description: Brand of the product
+ my_id: product_retail_price_010 Column: product_retail_price Type: REAL Description: Retail price of the product
+ my_id: product_department_011 Column: product_department Type: TEXT Description: Department of the product
+ my_id: product_sku_012 Column: product_sku Type: TEXT Description: SKU of the product
+ my_id: product_distribution_center_id_013 Column: product_distribution_center_id Type: INTEGER Description: Distribution center ID
+Table: order_items
+ my_id: order_items_id_01 Column: id Type: INTEGER Description: Primary key
+ my_id: order_items_order_id_02 Column: order_id Type: INTEGER Description: Foreign key referencing orders
+ my_id: order_items_user_id_03 Column: user_id Type: INTEGER Description: Foreign key referencing users
+ my_id: order_items_product_id_04 Column: product_id Type: INTEGER Description: Foreign key referencing products
+ my_id: order_items_inventory_item_id_05 Column: inventory_item_id Type: INTEGER Description: Foreign key referencing inventory items
+ my_id: order_items_status_06 Column: status Type: TEXT Description: Status of the order item
+ my_id: order_items_created_at_07 Column: created_at Type: TIMESTAMP Description: Timestamp when order item was created
+ my_id: order_items_shipped_at_08 Column: shipped_at Type: TIMESTAMP Description: Timestamp when order item was shipped
+ my_id: order_items_delivered_at_09 Column: delivered_at Type: TIMESTAMP Description: Timestamp when order item was delivered
+ my_id: order_items_returned_at_10 Column: returned_at Type: TIMESTAMP Description: Timestamp when order item was returned
+ my_id: order_items_sale_price_11 Column: sale_price Type: REAL Description: Sale price of the order item
+Table: orders
+ my_id: order_id1 Column: order_id Type: INTEGER Description: Order ID
+ my_id: user_id2 Column: user_id Type: INTEGER Description: User ID
+ my_id: status3 Column: status Type: TEXT Description: Order Status
+ my_id: gender4 Column: gender Type: TEXT Description: User Gender
+ my_id: created_at5 Column: created_at Type: TIMESTAMP Description: Order Created At
+ my_id: returned_at6 Column: returned_at Type: TIMESTAMP Description: Order Returned At
+ my_id: shipped_at7 Column: shipped_at Type: TIMESTAMP Description: Order Shipped At
+ my_id: delivered_at8 Column: delivered_at Type: TIMESTAMP Description: Order Delivered At
+ my_id: num_of_item9 Column: num_of_item Type: INTEGER Description: Number of Items
+Table: products
+ my_id: products_id_1 Column: id Type: INTEGER Description: Product ID
+ my_id: products_cost_2 Column: cost Type: REAL Description: Product cost
+ my_id: products_category_3 Column: category Type: TEXT Description: Product category
+ my_id: products_name_4 Column: name Type: TEXT Description: Product name
+ my_id: products_brand_5 Column: brand Type: TEXT Description: Product brand
+ my_id: products_retail_price_6 Column: retail_price Type: REAL Description: Product retail price
+ my_id: products_department_7 Column: department Type: TEXT Description: Product department
+ my_id: products_sku_8 Column: sku Type: TEXT Description: Product SKU
+ my_id: products_distribution_center_id_9 Column: distribution_center_id Type: INTEGER Description: Distribution Center ID
+Table: users
+ my_id: users_01_id Column: id Type: INTEGER Description: User ID
+ my_id: users_02_first_name Column: first_name Type: TEXT Description: User first name
+ my_id: users_03_last_name Column: last_name Type: TEXT Description: User last name
+ my_id: users_04_email Column: email Type: TEXT Description: User email address
+ my_id: users_05_age Column: age Type: INTEGER Description: User age
+ my_id: users_06_gender Column: gender Type: TEXT Description: User gender
+ my_id: users_07_state Column: state Type: TEXT Description: User state
+ my_id: users_08_street_address Column: street_address Type: TEXT Description: User street address
+ my_id: users_09_postal_code Column: postal_code Type: TEXT Description: User postal code
+ my_id: users_10_city Column: city Type: TEXT Description: User city
+ my_id: users_11_country Column: country Type: TEXT Description: User country
+ my_id: users_12_latitude Column: latitude Type: REAL Description: User latitude coordinate
+ my_id: users_13_longitude Column: longitude Type: REAL Description: User longitude coordinate
+ my_id: users_14_traffic_source Column: traffic_source Type: TEXT Description: User traffic source
+ my_id: users_15_created_at Column: created_at Type: TIMESTAMP Description: User creation timestamp
+ my_id: users_16_user_geom Column: user_geom Type: TEXT Description: User geometry data
