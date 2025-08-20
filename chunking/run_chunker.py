@@ -29,16 +29,18 @@ def main():
         print("\nSample chunks (21-22):")
         print("-" * 40)
 
-        for i, chunk in enumerate(chunks[21:23]):
-            print(f"Chunk {i+21}:")
-            print(f"  ID: {chunk.id}")
-            print(f"  Document: {chunk.metadata['document_name']}")
-            print(f"  Source: {Path(chunk.metadata['source_file']).name}")
-            print(f"  Length: {chunk.metadata['chunk_length']} chars")
-            print(
-                f"  Text: {repr(chunk.text[:150])}{'...' if len(chunk.text) > 150 else ''}"
-            )
-            print()
+        # for i, chunk in enumerate(chunks[21:23]):
+        for i, chunk in enumerate(chunks):
+            if chunk.metadata["document_name"] == "table_schema":
+                print(f"Chunk {i+21}:")
+                print(f"  ID: {chunk.id}")
+                print(f"  Document: {chunk.metadata['document_name']}")
+                print(f"  Source: {Path(chunk.metadata['source_file']).name}")
+                print(f"  Length: {chunk.metadata['chunk_length']} chars")
+                print(
+                    f"  Text: {repr(chunk.text[:150])}{'...' if len(chunk.text) > 150 else ''}"
+                )
+                print()
 
         # Display document summary
         print("Document Summary:")
