@@ -2,13 +2,16 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
 
-This is a minimal Python project called "graphrag-again" that appears to be in early development. The project currently contains only a basic Hello World implementation and is set up with Python 3.10.
+
 
 ## Project Structure
+This project is about learning ontology setup and usage. Currently it has directories:
+- inspirations - with docs and texts serving as notes in which the project has to go
+- chunking - a folder with python script with working implementation of text chunker
+- sources - a folder with text sources which are used as example content to be chunked and analyzed further
 
-- `main.py` - Entry point with a simple main function that prints a greeting
+
 - `pyproject.toml` - Project configuration using modern Python packaging standards
 - `.python-version` - Specifies Python 3.10 as the target version
 - `README.md` - Currently empty project documentation
@@ -48,6 +51,7 @@ uv sync --dev
 ```
 
 #### Running Python Scripts
+scripts are always run from main directory (it is important in scope of relative imports)
 ```bash
 # Run any Python script through uv
 uv run python script.py
@@ -68,6 +72,21 @@ source .venv/bin/activate
 # Or run commands in the virtual environment
 uv run <command>
 ```
+#### environmental variables
+
+if env variables necessary add this:
+```
+from dotenv import load_dotenv
+load_dotenv()
+```
+currently in env file there is:
+OPENAI_API_KEY=...
+OPENAI_MODEL=...
+MIN_CONFIDENCE=...
+SOURCES_DIR=...
+OUTPUT_FILE=...
+VERBOSE=...
+
 
 ## Python Environment
 
@@ -82,3 +101,7 @@ uv run <command>
 - No linting or formatting tools are set up
 - The project structure suggests it may be intended for GraphRAG (Graph Retrieval-Augmented Generation) functionality based on the name, but no such implementation exists yet
 - Use `uv` for all Python package management and script execution
+
+
+## reading instructions
+if you hwave file ipynb, read them with python json

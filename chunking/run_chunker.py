@@ -31,7 +31,7 @@ def main():
 
         # for i, chunk in enumerate(chunks[21:23]):
         for i, chunk in enumerate(chunks):
-            if chunk.metadata["document_name"] == "table_schema":
+            if chunk.metadata["document_name"] == "atinternet_texts":
                 print(f"Chunk {i+21}:")
                 print(f"  ID: {chunk.id}")
                 print(f"  Document: {chunk.metadata['document_name']}")
