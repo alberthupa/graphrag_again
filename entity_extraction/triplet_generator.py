@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from entity_extraction import ExtractionResult
 from triplet_generator_class import TripletGenerator
 from entity_extraction.models import Entity, Relationship, EntityType, PredicateType
+from db import create_database_interface
 
 load_dotenv()
 
@@ -33,6 +34,8 @@ def load_config() -> Dict[str, Any]:
     return {
         "min_confidence": float(os.getenv("MIN_CONFIDENCE", "0.3")),
         "verbose": os.getenv("VERBOSE", "true").lower() == "true",
+        "enable_database_storage": os.getenv("ENABLE_DATABASE_STORAGE", "false").lower() == "true",
+        "database_url": os.getenv("DATABASE_URL", "sqlite:///db/knowledge_graph.db"),
     }
 
 
@@ -280,6 +283,9 @@ def main():
         print(f"📄 Input log file: {args.input_log}")
         print(f"📄 Output file: {args.output}")
         print(f"📏 Min confidence: {config['min_confidence']}")
+        print(f"🗃️ Database storage: {'enabled' if config['enable_database_storage'] else 'disabled'}")
+        if config['enable_database_storage']:
+            print(f"🗃️ Database URL: {config['database_url']}")
 
     # Check if input log file exists
     if not os.path.exists(args.input_log):
@@ -330,11 +336,56 @@ def main():
         save_triplet_results(
             extraction_result, triplets_summary, args.output, verbose
         )
+        
+        # Step 4: Save to database if enabled
+        if config['enable_database_storage']:
+            if verbose:
+                print("\n🗃️ Step 4: Saving results to database")
+            
+            try:
+                db_interface = create_database_interface(
+                    database_url=config['database_url'], 
+                    echo=False
+                )
+                
+                # Prepare config for database storage
+                db_config = {
+                    "min_confidence": config['min_confidence'],
+                    "input_log_file": args.input_log,
+                    "output_file": args.output,
+                    "script": "triplet_generator.py"
+                }
+                
+                # Save to database
+                extraction_run_id = db_interface.save_extraction_result(
+                    extraction_result, 
+                    config_used=db_config
+                )
+                
+                if verbose:
+                    print(f"✓ Results saved to database with run ID: {extraction_run_id}")
+                    
+                    # Show database stats
+                    stats = db_interface.get_database_stats()
+                    print("📊 Database now contains:")
+                    print(f"   - {stats['entities_count']} entities")
+                    print(f"   - {stats['relationships_count']} relationships") 
+                    print(f"   - {stats['triplets_count']} triplets")
+                    print(f"   - {stats['extraction_runs_count']} extraction runs")
+                    
+            except Exception as e:
+                print(f"⚠️ Warning: Failed to save to database: {e}")
+                if verbose:
+                    import traceback
+                    traceback.print_exc()
+        
         print_triplet_summary(extraction_result, triplets_summary, verbose)
 
         print("\n🎉 Triplet generation completed successfully!")
         if verbose:
             print(f"📄 Complete results saved to: {args.output}")
+            if config['enable_database_storage']:
+                print(f"🗃️ Results also saved to database: {config['database_url']}")
 
     except KeyboardInterrupt:
         print("\n⚠️ Pipeline interrupted by user")

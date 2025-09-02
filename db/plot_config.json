@@ -1,0 +1,7 @@
+{
+  "layout_type": "kamada_kawai",
+  "node_size": 20,
+  "edge_width": 1.0,
+  "show_edge_labels": true,
+  "output_filename": "interactive_knowledge_graph.html"
+}
