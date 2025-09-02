@@ -150,7 +150,7 @@ def test_refactored_pipeline():
         # Test triplet generation
         print("\n🔗 Step 3: Testing triplet generation...")
         
-        from entity_extraction.triplet_generator_class import TripletGenerator
+        from triplet_generator_class_something import TripletGenerator
         triplet_generator = TripletGenerator(min_confidence=0.3)
         
         # Generate regular triplets

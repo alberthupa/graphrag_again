@@ -1,7 +1,7 @@
 """TripletGenerator class for converting entities and relationships into knowledge graph triplets."""
 
 from typing import List, Dict, Any, Optional
-from .models import Entity, Relationship, Triplet, ExtractionResult, EntityType, PredicateType
+from entity_extraction.models import Entity, Relationship, Triplet, ExtractionResult, EntityType, PredicateType
 
 
 class TripletGenerator:

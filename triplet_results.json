@@ -1,37 +1,42 @@
 {
   "generation_metadata": {
-    "timestamp": "2025-08-27T16:16:05.360168",
-    "total_chunks_processed": 6,
+    "timestamp": "2025-09-02T08:40:16.383203",
+    "total_chunks_processed": 10,
     "extraction_stats": {
-      "total_entities": 33,
-      "total_relationships": 25,
+      "total_entities": 63,
+      "total_relationships": 59,
       "entities_by_type": {
-        "KPI": 15,
-        "Domain": 5,
-        "DataSource": 4,
-        "Metric": 5,
-        "Table": 4
+        "KPI": 25,
+        "Domain": 12,
+        "DataSource": 3,
+        "Metric": 6,
+        "Table": 14,
+        "Column": 3
       },
       "relationships_by_predicate": {
-        "belongsTo": 7,
-        "locatedIn": 4,
-        "measures": 2,
-        "hasDefinition": 6,
-        "contains": 6
+        "belongsTo": 29,
+        "locatedIn": 3,
+        "measures": 4,
+        "dependsOn": 1,
+        "contains": 8,
+        "hasDefinition": 12,
+        "calculatedBy": 2
       }
     }
   },
   "triplets_summary": {
-    "total_triplets": 73,
-    "average_confidence": 0.8965753424657533,
-    "unique_subjects": 13,
-    "unique_objects": 13,
+    "total_triplets": 261,
+    "average_confidence": 0.9174329501915711,
+    "unique_subjects": 22,
+    "unique_objects": 16,
     "triplets_by_predicate": {
-      "belongsTo": 30,
-      "locatedIn": 5,
-      "measures": 5,
-      "hasDefinition": 18,
-      "contains": 15
+      "belongsTo": 141,
+      "locatedIn": 3,
+      "measures": 28,
+      "dependsOn": 6,
+      "contains": 4,
+      "hasDefinition": 77,
+      "calculatedBy": 2
     }
   },
   "entities": [
@@ -62,29 +67,29 @@
       "description": "System used to manage customer data for analytics.",
       "confidence": 0.85,
       "attributes": {
-        "type": "Analytics Platform"
+        "type": "Product Solution"
       },
       "source_chunk_id": "chunk_0"
     },
     {
       "id": "kpi_1",
       "type": "KPI",
-      "name": "Cost Per Click",
+      "name": "Cost per Click",
       "description": "The amount spent on advertising divided by the number of clicks received.",
       "confidence": 0.95,
       "attributes": {
-        "definition": "Cost Per Click is a metric that measures the cost incurred for each click on an advertisement."
+        "definition": "Cost per Click is a metric that measures the cost incurred for each click on an advertisement."
       },
       "source_chunk_id": "chunk_1"
     },
     {
       "id": "kpi_2",
       "type": "KPI",
-      "name": "Cost Per Conversion",
+      "name": "Cost per Conversion",
       "description": "The total cost of acquiring a customer divided by the number of conversions.",
       "confidence": 0.95,
       "attributes": {
-        "definition": "Cost Per Conversion measures the cost associated with converting a lead into a customer."
+        "definition": "Cost per Conversion measures the cost associated with converting a lead into a customer."
       },
       "source_chunk_id": "chunk_1"
     },
@@ -103,7 +108,7 @@
       "id": "data_source_1",
       "type": "DataSource",
       "name": "Piwik PRO",
-      "description": "A platform for analyzing key performance indicators critical to business success.",
+      "description": "A platform for analyzing ecommerce KPIs.",
       "confidence": 0.9,
       "attributes": {
         "type": "Analytics Platform"
@@ -114,27 +119,27 @@
       "id": "domain_1",
       "type": "Domain",
       "name": "Ecommerce",
-      "description": "The business area focused on buying and selling goods and services online.",
+      "description": "Business area focused on buying and selling goods and services online.",
       "confidence": 0.95,
       "attributes": {},
       "source_chunk_id": "chunk_1"
     },
     {
-      "id": "1",
+      "id": "kpi_1",
       "type": "KPI",
       "name": "Returning Visitors",
-      "description": "Metric to determine how many people have visited and returned to a website.",
+      "description": "Metric that determines how many people have visited and returned to a website.",
       "confidence": 0.95,
       "attributes": {
-        "definition": "Calculated by dividing the number of repeat visitors by the total number of unique visitors in a given time period."
+        "definition": "Calculated by dividing the number of repeat visitors by the total number of unique visitors to your site in a given time period."
       },
       "source_chunk_id": "chunk_2"
     },
     {
-      "id": "2",
+      "id": "metric_1",
       "type": "Metric",
       "name": "Cart-to-Detail Rate",
-      "description": "Measures the ratio of cart additions to views of the product page.",
+      "description": "Shows the ratio of cart additions to views of the product page.",
       "confidence": 0.95,
       "attributes": {
         "formula": "Number of unique products added to a cart / Number of times they have been visited"
@@ -142,46 +147,46 @@
       "source_chunk_id": "chunk_2"
     },
     {
-      "id": "3",
+      "id": "kpi_2",
       "type": "KPI",
-      "name": "Abandoned Cart Percentage",
+      "name": "Cart Abandonment Rate",
       "description": "Measures the percentage of sessions that had an interaction with a cart but no order.",
       "confidence": 0.95,
       "attributes": {
-        "definition": "Frequently, customers add items to their shopping cart but fail to complete the purchase."
+        "definition": "Also known as the abandoned cart percentage KPI or the abandonment rate."
       },
       "source_chunk_id": "chunk_2"
     },
     {
-      "id": "4",
+      "id": "metric_2",
       "type": "Metric",
-      "name": "Average Cart Abandonment Rate",
-      "description": "Average rate of cart abandonment in online shopping.",
-      "confidence": 0.9,
+      "name": "Average Online Shopping Cart Abandonment Rate",
+      "description": "Average rate at which customers abandon their shopping carts.",
+      "confidence": 0.95,
       "attributes": {
         "formula": "70.19%"
       },
       "source_chunk_id": "chunk_2"
     },
     {
-      "id": "5",
+      "id": "metric_3",
       "type": "Metric",
       "name": "Site Search Usage",
       "description": "Analyzes how visitors use the site’s search function.",
       "confidence": 0.9,
       "attributes": {
-        "definition": "Understanding search terms entered and their impact on engagement."
+        "definition": "Includes the search terms they enter and the impact of the search results on engagement."
       },
       "source_chunk_id": "chunk_2"
     },
     {
-      "id": "6",
+      "id": "kpi_3",
       "type": "KPI",
-      "name": "Cart Abandonment Rate",
-      "description": "Indicates the rate at which customers abandon their shopping carts.",
+      "name": "Cart-to-Detail Rate Improvement",
+      "description": "Improvement in the cart-to-detail rate through better product information and user experience.",
       "confidence": 0.9,
       "attributes": {
-        "definition": "High abandonment rate can be caused by various factors."
+        "definition": "Providing detailed product information can lead to a high cart-to-detail rate."
       },
       "source_chunk_id": "chunk_2"
     },
@@ -200,10 +205,10 @@
       "id": "kpi_2",
       "type": "KPI",
       "name": "Ecommerce Key Performance Indicators",
-      "description": "KPIs specifically for ecommerce to measure performance.",
+      "description": "Metrics used to evaluate the performance of ecommerce activities.",
       "confidence": 0.9,
       "attributes": {
-        "definition": "Metrics used to evaluate the performance of ecommerce activities."
+        "definition": "KPIs that are specifically tailored for measuring ecommerce performance."
       },
       "source_chunk_id": "chunk_3"
     },
@@ -228,36 +233,14 @@
     {
       "id": "domain_1",
       "type": "Domain",
-      "name": "Online Marketing",
-      "description": "Business area focused on marketing activities conducted online.",
-      "confidence": 0.9,
+      "name": "Ecommerce",
+      "description": "Business area focused on online sales and marketing.",
+      "confidence": 0.95,
       "attributes": {},
       "source_chunk_id": "chunk_3"
     },
     {
       "id": "1",
-      "type": "KPI",
-      "name": "Funnel Performance",
-      "description": "Maximizing funnel performance in ecommerce.",
-      "confidence": 0.95,
-      "attributes": {
-        "definition": "Funnel performance measures the effectiveness of the customer journey from awareness to conversion."
-      },
-      "source_chunk_id": "chunk_4"
-    },
-    {
-      "id": "2",
-      "type": "DataSource",
-      "name": "Piwik PRO Analytics Suite",
-      "description": "A comprehensive analytics suite for ecommerce.",
-      "confidence": 0.9,
-      "attributes": {
-        "type": "Analytics Platform"
-      },
-      "source_chunk_id": "chunk_4"
-    },
-    {
-      "id": "3",
       "type": "Domain",
       "name": "Ecommerce Analytics",
       "description": "Analytics focused on ecommerce performance and customer behavior.",
@@ -266,10 +249,19 @@
       "source_chunk_id": "chunk_4"
     },
     {
+      "id": "2",
+      "type": "KPI",
+      "name": "Funnel Performance",
+      "description": null,
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_4"
+    },
+    {
       "id": "4",
       "type": "Table",
       "name": "Customer Journey",
-      "description": "Data structure representing the customer journey through the funnel.",
+      "description": "Data structure representing the stages of customer interaction.",
       "confidence": 0.85,
       "attributes": {},
       "source_chunk_id": "chunk_4"
@@ -278,18 +270,16 @@
       "id": "5",
       "type": "Metric",
       "name": "Conversion Rate",
-      "description": "Percentage of users who complete a desired action.",
-      "confidence": 0.9,
-      "attributes": {
-        "formula": "Conversion Rate = (Conversions / Total Visitors) * 100"
-      },
+      "description": null,
+      "confidence": 0.8,
+      "attributes": {},
       "source_chunk_id": "chunk_4"
     },
     {
       "id": "kpi_1",
       "type": "KPI",
       "name": "Customer Lifetime Value (CLV)",
-      "description": "Total revenue a customer generates over their relationship with the company",
+      "description": "The total revenue a customer generates over their relationship with the company.",
       "confidence": 0.95,
       "attributes": {},
       "source_chunk_id": "chunk_5"
@@ -298,7 +288,7 @@
       "id": "kpi_2",
       "type": "KPI",
       "name": "Average Order Value by Channel",
-      "description": "Average revenue generated per order across different channels",
+      "description": "The average revenue generated per order across different channels.",
       "confidence": 0.9,
       "attributes": {},
       "source_chunk_id": "chunk_5"
@@ -307,7 +297,7 @@
       "id": "kpi_3",
       "type": "KPI",
       "name": "Revenue per Visitor (RPV)",
-      "description": "Average revenue generated per visitor to the ecommerce site",
+      "description": "The average revenue generated per visitor to the ecommerce site.",
       "confidence": 0.9,
       "attributes": {},
       "source_chunk_id": "chunk_5"
@@ -316,16 +306,7 @@
       "id": "kpi_4",
       "type": "KPI",
       "name": "Cart Abandonment Rate",
-      "description": "Percentage of shopping carts that are abandoned before purchase",
-      "confidence": 0.9,
-      "attributes": {},
-      "source_chunk_id": "chunk_5"
-    },
-    {
-      "id": "kpi_5",
-      "type": "KPI",
-      "name": "Repeat Purchase Rate (RPR)",
-      "description": "Percentage of customers who make more than one purchase",
+      "description": "The percentage of shopping carts that are abandoned before completing a purchase.",
       "confidence": 0.9,
       "attributes": {},
       "source_chunk_id": "chunk_5"
@@ -333,31 +314,42 @@
     {
       "id": "table_1",
       "type": "Table",
-      "name": "ecommerce_funnel",
-      "description": "Table representing the stages of the ecommerce customer journey",
+      "name": "ecommerce_metrics",
+      "description": "Table containing various ecommerce key performance indicators.",
       "confidence": 0.85,
       "attributes": {},
       "source_chunk_id": "chunk_5"
     },
     {
-      "id": "metric_1",
-      "type": "Metric",
-      "name": "Conversion Rate",
-      "description": "Percentage of visitors who complete a desired action",
+      "id": "column_1",
+      "type": "Column",
+      "name": "traffic_source",
+      "description": "Source of traffic to the ecommerce site.",
       "confidence": 0.85,
       "attributes": {
-        "formula": "Number of Conversions / Total Visitors * 100"
+        "type": "string"
       },
       "source_chunk_id": "chunk_5"
     },
     {
-      "id": "data_source_1",
-      "type": "DataSource",
-      "name": "Google Analytics",
-      "description": "Web analytics service that tracks and reports website traffic",
-      "confidence": 0.95,
+      "id": "column_2",
+      "type": "Column",
+      "name": "organic_traffic_sessions",
+      "description": "Number of sessions generated from organic traffic.",
+      "confidence": 0.85,
       "attributes": {
-        "type": "Analytics Platform"
+        "type": "integer"
+      },
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "column_3",
+      "type": "Column",
+      "name": "click_through_rate",
+      "description": "Rate at which users click on a link compared to the number of times it is shown.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "decimal"
       },
       "source_chunk_id": "chunk_5"
     },
@@ -365,10 +357,313 @@
       "id": "domain_1",
       "type": "Domain",
       "name": "Ecommerce",
-      "description": "Business area focused on online buying and selling",
+      "description": "Business area focused on online retail and sales.",
       "confidence": 0.95,
       "attributes": {},
       "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Orders New vs. Returning",
+      "description": "Tracking the ratio of orders from new and returning customers to gauge marketing success.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Essential to gauge the success of marketing efforts and loyalty programs."
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Average Order Value (AOV)",
+      "description": "The average value of each order placed through a specific channel over a set period.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Calculated by dividing the revenue by the number of orders."
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "kpi_3",
+      "type": "KPI",
+      "name": "Revenue by Product",
+      "description": "The percentage of total revenue generated by a particular product.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Helps identify products with the highest sales and their importance to the company."
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "metric_1",
+      "type": "Metric",
+      "name": "Average Order Value Calculation",
+      "description": "A metric that shows the average revenue per order.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Revenue / Number of Orders"
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Ecommerce",
+      "description": "Business area focused on online buying and selling.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "data_source_1",
+      "type": "DataSource",
+      "name": "Customer Support Chat",
+      "description": "Source of insights into customer intent and behavior.",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "Communication Tool"
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Traffic Source/Medium",
+      "description": "Indicates the starting point of website visitors, such as a search engine or specific domain.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The source refers to the starting point of your website’s visitors, such as a search engine (for example, Google) or a specific domain."
+      },
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Organic Traffic Sessions",
+      "description": "Measures the number of sessions initiated by visitors coming from organic search results.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "This KPI provides valuable insight into user behavior by tracking the number of website visitors who found your link through a search engine result page rather than through paid ads."
+      },
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Ecommerce",
+      "description": "Business area focused on online buying and selling of goods.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "entity_1",
+      "type": "Table",
+      "name": "Piwik PRO vs. GA3 & GA4",
+      "description": "Comparison table between Piwik PRO and Google Analytics versions.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_2",
+      "type": "Table",
+      "name": "Piwik PRO vs. Matomo",
+      "description": "Comparison table between Piwik PRO and Matomo.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_3",
+      "type": "Table",
+      "name": "Piwik PRO vs. Adobe Analytics",
+      "description": "Comparison table between Piwik PRO and Adobe Analytics.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_4",
+      "type": "Table",
+      "name": "Piwik PRO vs. AT Internet",
+      "description": "Comparison table between Piwik PRO and AT Internet.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_5",
+      "type": "Table",
+      "name": "Piwik PRO vs. Countly",
+      "description": "Comparison table between Piwik PRO and Countly.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_6",
+      "type": "Table",
+      "name": "Piwik PRO vs. Amplitude",
+      "description": "Comparison table between Piwik PRO and Amplitude.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_7",
+      "type": "Table",
+      "name": "Piwik PRO vs. Mixpanel",
+      "description": "Comparison table between Piwik PRO and Mixpanel.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_8",
+      "type": "Table",
+      "name": "Piwik PRO vs. Snowplow",
+      "description": "Comparison table between Piwik PRO and Snowplow.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_9",
+      "type": "Table",
+      "name": "Piwik PRO vs. Heap",
+      "description": "Comparison table between Piwik PRO and Heap.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_10",
+      "type": "Table",
+      "name": "PP Tag Manager vs. GTM",
+      "description": "Comparison table between PP Tag Manager and Google Tag Manager.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_11",
+      "type": "Domain",
+      "name": "Web Analytics",
+      "description": "Domain related to web analytics tools and comparisons.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_12",
+      "type": "Domain",
+      "name": "Tag Management",
+      "description": "Domain related to tag management systems.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_13",
+      "type": "Domain",
+      "name": "Customer Data Platforms",
+      "description": "Domain related to customer data platform vendors.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_14",
+      "type": "Domain",
+      "name": "Consent Management",
+      "description": "Domain related to consent management practices.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_15",
+      "type": "KPI",
+      "name": "Conversion Tracking",
+      "description": "KPI related to tracking conversions in analytics.",
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_16",
+      "type": "KPI",
+      "name": "Remarketing",
+      "description": "KPI related to remarketing efforts in analytics.",
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Keyword Performance",
+      "description": "Tracking the topics and search terms on your website that attract the most traffic.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Helps understand the most relevant and high-impact keywords."
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Click-Through Rate (CTR)",
+      "description": "Measures the number of users who clicked a link compared to the number of impressions.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Indicates how well content and marketing campaigns reach the target audience."
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "kpi_3",
+      "type": "KPI",
+      "name": "Engagement Rate",
+      "description": "Evaluates the level of engagement with a product or content.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "A high engagement rate can lead to more clicks and conversions."
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "kpi_4",
+      "type": "KPI",
+      "name": "Bounce Rate",
+      "description": "Percentage of people who enter a single page and leave without further action.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Indicates the success of a single landing page."
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "metric_1",
+      "type": "Metric",
+      "name": "Bounce Rate Calculation",
+      "description": "Calculated measure of bounce rate.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Bounce Rate = Single-Page Sessions / All Sessions"
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Ecommerce KPIs",
+      "description": "Business area focusing on key performance indicators for ecommerce.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_9"
     }
   ],
   "relationships": [
@@ -391,66 +686,75 @@
       "source_chunk_id": "chunk_0"
     },
     {
-      "id": "rel_1",
+      "id": "relationship_1",
       "subject_id": "kpi_1",
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "Cost Per Click is a key performance indicator in the ecommerce domain.",
+      "context": "KPI related to ecommerce performance",
       "source_chunk_id": "chunk_1"
     },
     {
-      "id": "rel_2",
+      "id": "relationship_2",
       "subject_id": "kpi_2",
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "Cost Per Conversion is a key performance indicator in the ecommerce domain.",
+      "context": "KPI related to ecommerce performance",
       "source_chunk_id": "chunk_1"
     },
     {
-      "id": "rel_3",
+      "id": "relationship_3",
       "subject_id": "kpi_3",
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "Number of Leads is a key performance indicator in the ecommerce domain.",
+      "context": "KPI related to ecommerce performance",
       "source_chunk_id": "chunk_1"
     },
     {
-      "id": "rel_4",
+      "id": "relationship_4",
       "subject_id": "data_source_1",
       "predicate": "locatedIn",
       "object_id": "domain_1",
-      "confidence": 0.9,
-      "context": "Piwik PRO is used within the ecommerce domain for analytics.",
+      "confidence": 0.85,
+      "context": "Data source used for ecommerce analytics",
       "source_chunk_id": "chunk_1"
     },
     {
-      "id": "r1",
-      "subject_id": "1",
+      "id": "rel_1",
+      "subject_id": "kpi_1",
       "predicate": "measures",
-      "object_id": "2",
+      "object_id": "metric_1",
       "confidence": 0.9,
-      "context": "Describes how returning visitors metric relates to cart-to-detail rate.",
+      "context": "Describes how returning visitors can indicate engagement with the website.",
       "source_chunk_id": "chunk_2"
     },
     {
-      "id": "r2",
-      "subject_id": "3",
-      "predicate": "hasDefinition",
-      "object_id": "4",
+      "id": "rel_2",
+      "subject_id": "kpi_2",
+      "predicate": "measures",
+      "object_id": "metric_2",
       "confidence": 0.9,
-      "context": "Defines abandoned cart percentage KPI.",
+      "context": "Describes the relationship between cart abandonment and user behavior.",
       "source_chunk_id": "chunk_2"
     },
     {
-      "id": "r3",
-      "subject_id": "5",
-      "predicate": "measures",
-      "object_id": "6",
+      "id": "rel_3",
+      "subject_id": "metric_1",
+      "predicate": "dependsOn",
+      "object_id": "kpi_3",
       "confidence": 0.9,
-      "context": "Site search usage impacts cart abandonment rate.",
+      "context": "Improving the cart-to-detail rate can depend on the metrics analyzed.",
+      "source_chunk_id": "chunk_2"
+    },
+    {
+      "id": "rel_4",
+      "subject_id": "metric_3",
+      "predicate": "measures",
+      "object_id": "kpi_1",
+      "confidence": 0.9,
+      "context": "Site search usage can impact returning visitors.",
       "source_chunk_id": "chunk_2"
     },
     {
@@ -459,7 +763,7 @@
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "KPI related to online marketing",
+      "context": "KPI related to ecommerce performance.",
       "source_chunk_id": "chunk_3"
     },
     {
@@ -468,7 +772,7 @@
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "Ecommerce KPIs related to online marketing",
+      "context": "KPIs specifically for ecommerce.",
       "source_chunk_id": "chunk_3"
     },
     {
@@ -477,38 +781,65 @@
       "predicate": "contains",
       "object_id": "table_2",
       "confidence": 0.8,
-      "context": "Piwik PRO Funnel Reports contain Shopping Behavior Report",
+      "context": "Piwik PRO Funnel Reports contain various funnel tracking events.",
       "source_chunk_id": "chunk_3"
     },
     {
-      "id": "1",
-      "subject_id": "1",
-      "predicate": "belongsTo",
-      "object_id": "3",
-      "confidence": 0.95,
-      "context": "KPI related to ecommerce analytics",
+      "id": "r1",
+      "subject_id": "2",
+      "predicate": "measures",
+      "object_id": "5",
+      "confidence": 0.9,
+      "context": "KPIs for ecommerce",
       "source_chunk_id": "chunk_4"
     },
     {
-      "id": "2",
-      "subject_id": "2",
-      "predicate": "locatedIn",
-      "object_id": "3",
+      "id": "r2",
+      "subject_id": "3",
+      "predicate": "contains",
+      "object_id": "4",
       "confidence": 0.9,
       "context": "Data source for ecommerce analytics",
       "source_chunk_id": "chunk_4"
     },
     {
-      "id": "3",
+      "id": "r3",
       "subject_id": "4",
       "predicate": "contains",
-      "object_id": "5",
+      "object_id": "6",
       "confidence": 0.85,
-      "context": "Table representing customer journey metrics",
+      "context": "Customer journey data structure",
       "source_chunk_id": "chunk_4"
     },
     {
-      "id": "rel_1",
+      "id": "r4",
+      "subject_id": "4",
+      "predicate": "contains",
+      "object_id": "7",
+      "confidence": 0.85,
+      "context": "Customer journey data structure",
+      "source_chunk_id": "chunk_4"
+    },
+    {
+      "id": "r5",
+      "subject_id": "4",
+      "predicate": "contains",
+      "object_id": "8",
+      "confidence": 0.85,
+      "context": "Customer journey data structure",
+      "source_chunk_id": "chunk_4"
+    },
+    {
+      "id": "r6",
+      "subject_id": "1",
+      "predicate": "hasDefinition",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "Ecommerce analytics KPIs",
+      "source_chunk_id": "chunk_4"
+    },
+    {
+      "id": "relationship_1",
       "subject_id": "kpi_1",
       "predicate": "hasDefinition",
       "object_id": "kpi_1",
@@ -517,7 +848,7 @@
       "source_chunk_id": "chunk_5"
     },
     {
-      "id": "rel_2",
+      "id": "relationship_2",
       "subject_id": "kpi_2",
       "predicate": "hasDefinition",
       "object_id": "kpi_2",
@@ -526,7 +857,7 @@
       "source_chunk_id": "chunk_5"
     },
     {
-      "id": "rel_3",
+      "id": "relationship_3",
       "subject_id": "kpi_3",
       "predicate": "hasDefinition",
       "object_id": "kpi_3",
@@ -535,7 +866,7 @@
       "source_chunk_id": "chunk_5"
     },
     {
-      "id": "rel_4",
+      "id": "relationship_4",
       "subject_id": "kpi_4",
       "predicate": "hasDefinition",
       "object_id": "kpi_4",
@@ -544,58 +875,328 @@
       "source_chunk_id": "chunk_5"
     },
     {
-      "id": "rel_5",
-      "subject_id": "kpi_5",
-      "predicate": "hasDefinition",
-      "object_id": "kpi_5",
-      "confidence": 0.9,
-      "context": "Definition of Repeat Purchase Rate",
+      "id": "relationship_5",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_1",
+      "confidence": 0.85,
+      "context": "Ecommerce metrics table contains traffic source column",
       "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "relationship_6",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_2",
+      "confidence": 0.85,
+      "context": "Ecommerce metrics table contains organic traffic sessions column",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "relationship_7",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_3",
+      "confidence": 0.85,
+      "context": "Ecommerce metrics table contains click-through rate column",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "relationship_8",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "Customer Lifetime Value belongs to Ecommerce domain",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "relationship_9",
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "Average Order Value by Channel belongs to Ecommerce domain",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "relationship_10",
+      "subject_id": "kpi_3",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "Revenue per Visitor belongs to Ecommerce domain",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "relationship_11",
+      "subject_id": "kpi_4",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "Cart Abandonment Rate belongs to Ecommerce domain",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_1",
+      "subject_id": "kpi_1",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_1",
+      "confidence": 0.95,
+      "context": "Definition of KPI",
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "rel_2",
+      "subject_id": "kpi_2",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_2",
+      "confidence": 0.95,
+      "context": "Definition of KPI",
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "rel_3",
+      "subject_id": "kpi_3",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_3",
+      "confidence": 0.95,
+      "context": "Definition of KPI",
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "rel_4",
+      "subject_id": "metric_1",
+      "predicate": "calculatedBy",
+      "object_id": "metric_1",
+      "confidence": 0.9,
+      "context": "Calculation of Average Order Value",
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "rel_5",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "KPI belongs to Ecommerce domain",
+      "source_chunk_id": "chunk_6"
     },
     {
       "id": "rel_6",
-      "subject_id": "table_1",
-      "predicate": "contains",
-      "object_id": "kpi_1",
+      "subject_id": "data_source_1",
+      "predicate": "locatedIn",
+      "object_id": "data_source_1",
+      "confidence": 0.9,
+      "context": "Source of customer insights",
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "rel_1",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI related to ecommerce marketing funnel",
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "rel_2",
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI related to ecommerce marketing funnel",
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_1",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_2",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_3",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "entity_4",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_5",
+      "subject_id": "entity_5",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_6",
+      "subject_id": "entity_6",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_7",
+      "subject_id": "entity_7",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_8",
+      "subject_id": "entity_8",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_9",
+      "subject_id": "entity_9",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.9,
+      "context": "Comparison of analytics tools",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_10",
+      "subject_id": "entity_10",
+      "predicate": "belongsTo",
+      "object_id": "entity_12",
+      "confidence": 0.9,
+      "context": "Comparison of tag management systems",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_11",
+      "subject_id": "entity_15",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
       "confidence": 0.85,
-      "context": "Ecommerce funnel table contains KPIs",
-      "source_chunk_id": "chunk_5"
+      "context": "KPI related to web analytics",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_12",
+      "subject_id": "entity_16",
+      "predicate": "belongsTo",
+      "object_id": "entity_11",
+      "confidence": 0.85,
+      "context": "KPI related to web analytics",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "rel_1",
+      "subject_id": "kpi_1",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_1",
+      "confidence": 0.95,
+      "context": "Definition of Keyword Performance",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "rel_2",
+      "subject_id": "kpi_2",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_2",
+      "confidence": 0.95,
+      "context": "Definition of Click-Through Rate",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "rel_3",
+      "subject_id": "kpi_3",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_3",
+      "confidence": 0.95,
+      "context": "Definition of Engagement Rate",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "rel_4",
+      "subject_id": "kpi_4",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_4",
+      "confidence": 0.95,
+      "context": "Definition of Bounce Rate",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "rel_5",
+      "subject_id": "metric_1",
+      "predicate": "calculatedBy",
+      "object_id": "metric_1",
+      "confidence": 0.9,
+      "context": "Calculation method for Bounce Rate",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "rel_6",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "Keyword Performance belongs to Ecommerce KPIs",
+      "source_chunk_id": "chunk_9"
     },
     {
       "id": "rel_7",
-      "subject_id": "table_1",
-      "predicate": "contains",
-      "object_id": "kpi_2",
-      "confidence": 0.85,
-      "context": "Ecommerce funnel table contains KPIs",
-      "source_chunk_id": "chunk_5"
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "Click-Through Rate belongs to Ecommerce KPIs",
+      "source_chunk_id": "chunk_9"
     },
     {
       "id": "rel_8",
-      "subject_id": "table_1",
-      "predicate": "contains",
-      "object_id": "kpi_3",
-      "confidence": 0.85,
-      "context": "Ecommerce funnel table contains KPIs",
-      "source_chunk_id": "chunk_5"
+      "subject_id": "kpi_3",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "Engagement Rate belongs to Ecommerce KPIs",
+      "source_chunk_id": "chunk_9"
     },
     {
       "id": "rel_9",
-      "subject_id": "domain_1",
-      "predicate": "contains",
-      "object_id": "table_1",
-      "confidence": 0.95,
-      "context": "Ecommerce domain includes ecommerce funnel",
-      "source_chunk_id": "chunk_5"
-    },
-    {
-      "id": "rel_10",
-      "subject_id": "data_source_1",
-      "predicate": "locatedIn",
+      "subject_id": "kpi_4",
+      "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.95,
-      "context": "Google Analytics is used in the Ecommerce domain",
-      "source_chunk_id": "chunk_5"
+      "context": "Bounce Rate belongs to Ecommerce KPIs",
+      "source_chunk_id": "chunk_9"
     }
   ],
   "triplets": [
@@ -604,13 +1205,13 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -621,13 +1222,13 @@
       "subject": {
         "id": "data_source_1",
         "type": "DataSource",
-        "name": "Google Analytics"
+        "name": "Customer Support Chat"
       },
       "predicate": "locatedIn",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.85,
       "source_text": null,
@@ -638,13 +1239,13 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -655,13 +1256,13 @@
       "subject": {
         "id": "kpi_2",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Click-Through Rate (CTR)"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -672,13 +1273,13 @@
       "subject": {
         "id": "kpi_3",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Engagement Rate"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -689,30 +1290,30 @@
       "subject": {
         "id": "data_source_1",
         "type": "DataSource",
-        "name": "Google Analytics"
+        "name": "Customer Support Chat"
       },
       "predicate": "locatedIn",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
-      "confidence": 0.9,
+      "confidence": 0.85,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "triplet_6",
       "subject": {
-        "id": "1",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Funnel Performance"
+        "name": "Keyword Performance"
       },
       "predicate": "measures",
       "object": {
-        "id": "2",
-        "type": "DataSource",
-        "name": "Piwik PRO Analytics Suite"
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -721,15 +1322,15 @@
     {
       "id": "triplet_7",
       "subject": {
-        "id": "3",
-        "type": "Domain",
-        "name": "Ecommerce Analytics"
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
       },
-      "predicate": "hasDefinition",
+      "predicate": "measures",
       "object": {
-        "id": "4",
-        "type": "Table",
-        "name": "Customer Journey"
+        "id": "metric_2",
+        "type": "Metric",
+        "name": "Average Online Shopping Cart Abandonment Rate"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -738,15 +1339,15 @@
     {
       "id": "triplet_8",
       "subject": {
-        "id": "5",
+        "id": "metric_1",
         "type": "Metric",
-        "name": "Conversion Rate"
+        "name": "Bounce Rate Calculation"
       },
-      "predicate": "measures",
+      "predicate": "dependsOn",
       "object": {
-        "id": "6",
+        "id": "kpi_3",
         "type": "KPI",
-        "name": "Cart Abandonment Rate"
+        "name": "Engagement Rate"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -755,15 +1356,15 @@
     {
       "id": "triplet_9",
       "subject": {
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
+      },
+      "predicate": "measures",
+      "object": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
-      },
-      "predicate": "belongsTo",
-      "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Keyword Performance"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -772,15 +1373,15 @@
     {
       "id": "triplet_10",
       "subject": {
-        "id": "kpi_2",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -789,9 +1390,26 @@
     {
       "id": "triplet_11",
       "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_12",
+      "subject": {
         "id": "table_1",
         "type": "Table",
-        "name": "ecommerce_funnel"
+        "name": "ecommerce_metrics"
       },
       "predicate": "contains",
       "object": {
@@ -804,34 +1422,17 @@
       "metadata": {}
     },
     {
-      "id": "triplet_12",
-      "subject": {
-        "id": "1",
-        "type": "KPI",
-        "name": "Funnel Performance"
-      },
-      "predicate": "belongsTo",
-      "object": {
-        "id": "3",
-        "type": "Domain",
-        "name": "Ecommerce Analytics"
-      },
-      "confidence": 0.95,
-      "source_text": null,
-      "metadata": {}
-    },
-    {
       "id": "triplet_13",
       "subject": {
         "id": "2",
-        "type": "DataSource",
-        "name": "Piwik PRO Analytics Suite"
+        "type": "KPI",
+        "name": "Funnel Performance"
       },
-      "predicate": "locatedIn",
+      "predicate": "measures",
       "object": {
-        "id": "3",
-        "type": "Domain",
-        "name": "Ecommerce Analytics"
+        "id": "5",
+        "type": "Metric",
+        "name": "Conversion Rate"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -840,17 +1441,17 @@
     {
       "id": "triplet_14",
       "subject": {
-        "id": "4",
-        "type": "Table",
-        "name": "Customer Journey"
+        "id": "1",
+        "type": "Domain",
+        "name": "Ecommerce Analytics"
       },
-      "predicate": "contains",
+      "predicate": "hasDefinition",
       "object": {
-        "id": "5",
-        "type": "Metric",
-        "name": "Conversion Rate"
+        "id": "2",
+        "type": "KPI",
+        "name": "Funnel Performance"
       },
-      "confidence": 0.85,
+      "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
@@ -859,13 +1460,13 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
       "predicate": "hasDefinition",
       "object": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
       "confidence": 0.95,
       "source_text": null,
@@ -876,13 +1477,13 @@
       "subject": {
         "id": "kpi_2",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Click-Through Rate (CTR)"
       },
       "predicate": "hasDefinition",
       "object": {
         "id": "kpi_2",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Click-Through Rate (CTR)"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -893,13 +1494,13 @@
       "subject": {
         "id": "kpi_3",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Engagement Rate"
       },
       "predicate": "hasDefinition",
       "object": {
         "id": "kpi_3",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Engagement Rate"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -910,13 +1511,13 @@
       "subject": {
         "id": "kpi_4",
         "type": "KPI",
-        "name": "Cart Abandonment Rate"
+        "name": "Bounce Rate"
       },
       "predicate": "hasDefinition",
       "object": {
         "id": "kpi_4",
         "type": "KPI",
-        "name": "Cart Abandonment Rate"
+        "name": "Bounce Rate"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -925,17 +1526,17 @@
     {
       "id": "triplet_19",
       "subject": {
-        "id": "kpi_5",
-        "type": "KPI",
-        "name": "Repeat Purchase Rate (RPR)"
+        "id": "table_1",
+        "type": "Table",
+        "name": "ecommerce_metrics"
       },
-      "predicate": "hasDefinition",
+      "predicate": "contains",
       "object": {
-        "id": "kpi_5",
-        "type": "KPI",
-        "name": "Repeat Purchase Rate (RPR)"
+        "id": "column_1",
+        "type": "Column",
+        "name": "traffic_source"
       },
-      "confidence": 0.9,
+      "confidence": 0.85,
       "source_text": null,
       "metadata": {}
     },
@@ -944,13 +1545,13 @@
       "subject": {
         "id": "table_1",
         "type": "Table",
-        "name": "ecommerce_funnel"
+        "name": "ecommerce_metrics"
       },
       "predicate": "contains",
       "object": {
-        "id": "kpi_1",
-        "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "id": "column_2",
+        "type": "Column",
+        "name": "organic_traffic_sessions"
       },
       "confidence": 0.85,
       "source_text": null,
@@ -961,13 +1562,13 @@
       "subject": {
         "id": "table_1",
         "type": "Table",
-        "name": "ecommerce_funnel"
+        "name": "ecommerce_metrics"
       },
       "predicate": "contains",
       "object": {
-        "id": "kpi_2",
-        "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "id": "column_3",
+        "type": "Column",
+        "name": "click_through_rate"
       },
       "confidence": 0.85,
       "source_text": null,
@@ -976,49 +1577,559 @@
     {
       "id": "triplet_22",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
-        "id": "kpi_3",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.85,
-      "source_text": null,
-      "metadata": {}
-    },
-    {
-      "id": "triplet_23",
-      "subject": {
+      "predicate": "belongsTo",
+      "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
-      },
-      "predicate": "contains",
-      "object": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
-      "id": "triplet_24",
+      "id": "triplet_23",
       "subject": {
-        "id": "data_source_1",
-        "type": "DataSource",
-        "name": "Google Analytics"
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
       },
-      "predicate": "locatedIn",
+      "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_24",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_25",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_26",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_27",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_28",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_29",
+      "subject": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "predicate": "calculatedBy",
+      "object": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_30",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_31",
+      "subject": {
+        "id": "data_source_1",
+        "type": "DataSource",
+        "name": "Customer Support Chat"
+      },
+      "predicate": "locatedIn",
+      "object": {
+        "id": "data_source_1",
+        "type": "DataSource",
+        "name": "Customer Support Chat"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_32",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_33",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_34",
+      "subject": {
+        "id": "entity_1",
+        "type": "Table",
+        "name": "Piwik PRO vs. GA3 & GA4"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_35",
+      "subject": {
+        "id": "entity_2",
+        "type": "Table",
+        "name": "Piwik PRO vs. Matomo"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_36",
+      "subject": {
+        "id": "entity_3",
+        "type": "Table",
+        "name": "Piwik PRO vs. Adobe Analytics"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_37",
+      "subject": {
+        "id": "entity_4",
+        "type": "Table",
+        "name": "Piwik PRO vs. AT Internet"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_38",
+      "subject": {
+        "id": "entity_5",
+        "type": "Table",
+        "name": "Piwik PRO vs. Countly"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_39",
+      "subject": {
+        "id": "entity_6",
+        "type": "Table",
+        "name": "Piwik PRO vs. Amplitude"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_40",
+      "subject": {
+        "id": "entity_7",
+        "type": "Table",
+        "name": "Piwik PRO vs. Mixpanel"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_41",
+      "subject": {
+        "id": "entity_8",
+        "type": "Table",
+        "name": "Piwik PRO vs. Snowplow"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_42",
+      "subject": {
+        "id": "entity_9",
+        "type": "Table",
+        "name": "Piwik PRO vs. Heap"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_43",
+      "subject": {
+        "id": "entity_10",
+        "type": "Table",
+        "name": "PP Tag Manager vs. GTM"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_12",
+        "type": "Domain",
+        "name": "Tag Management"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_44",
+      "subject": {
+        "id": "entity_15",
+        "type": "KPI",
+        "name": "Conversion Tracking"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.85,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_45",
+      "subject": {
+        "id": "entity_16",
+        "type": "KPI",
+        "name": "Remarketing"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.85,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_46",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_47",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_48",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_49",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_50",
+      "subject": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "predicate": "calculatedBy",
+      "object": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_51",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_52",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_53",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "triplet_54",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.95,
       "source_text": null,
@@ -1029,13 +2140,13 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1046,13 +2157,13 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1063,13 +2174,13 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
-      "predicate": "belongsTo",
+      "predicate": "measures",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1078,34 +2189,34 @@
     {
       "id": "kpi_triplet_3",
       "subject": {
-        "id": "kpi_1",
-        "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
       },
-      "predicate": "hasDefinition",
+      "predicate": "measures",
       "object": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.95,
+      "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_4",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.85,
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
@@ -1114,15 +2225,15 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
-      "predicate": "belongsTo",
+      "predicate": "hasDefinition",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
@@ -1131,15 +2242,15 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
@@ -1148,15 +2259,15 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
-      "predicate": "belongsTo",
+      "predicate": "hasDefinition",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
@@ -1165,13 +2276,13 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
-      "predicate": "hasDefinition",
+      "predicate": "belongsTo",
       "object": {
-        "id": "kpi_1",
-        "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.95,
       "source_text": null,
@@ -1180,66 +2291,66 @@
     {
       "id": "kpi_triplet_9",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.85,
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_10",
       "subject": {
-        "id": "kpi_2",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Keyword Performance"
       },
-      "predicate": "belongsTo",
+      "predicate": "hasDefinition",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_11",
       "subject": {
-        "id": "kpi_2",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_12",
       "subject": {
-        "id": "kpi_2",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Keyword Performance"
       },
-      "predicate": "hasDefinition",
+      "predicate": "belongsTo",
       "object": {
-        "id": "kpi_2",
-        "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1248,32 +2359,32 @@
     {
       "id": "kpi_triplet_13",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
-        "id": "kpi_2",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.85,
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_14",
       "subject": {
-        "id": "kpi_3",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Keyword Performance"
       },
-      "predicate": "belongsTo",
+      "predicate": "measures",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1282,15 +2393,15 @@
     {
       "id": "kpi_triplet_15",
       "subject": {
-        "id": "kpi_3",
-        "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
       },
-      "predicate": "hasDefinition",
+      "predicate": "measures",
       "object": {
-        "id": "kpi_3",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Keyword Performance"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1299,49 +2410,49 @@
     {
       "id": "kpi_triplet_16",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
-        "id": "kpi_3",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.85,
-      "source_text": null,
-      "metadata": {}
-    },
-    {
-      "id": "kpi_triplet_17",
-      "subject": {
-        "id": "1",
-        "type": "KPI",
-        "name": "Funnel Performance"
-      },
-      "predicate": "measures",
+      "predicate": "belongsTo",
       "object": {
-        "id": "2",
-        "type": "DataSource",
-        "name": "Piwik PRO Analytics Suite"
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
     {
+      "id": "kpi_triplet_17",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
       "id": "kpi_triplet_18",
       "subject": {
-        "id": "1",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Funnel Performance"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
-        "id": "3",
+        "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce Analytics"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.95,
       "source_text": null,
@@ -1350,32 +2461,32 @@
     {
       "id": "kpi_triplet_19",
       "subject": {
-        "id": "3",
-        "type": "Domain",
-        "name": "Ecommerce Analytics"
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
       },
       "predicate": "hasDefinition",
       "object": {
-        "id": "4",
-        "type": "Table",
-        "name": "Customer Journey"
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_20",
       "subject": {
-        "id": "1",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Funnel Performance"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
-        "id": "3",
+        "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce Analytics"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.95,
       "source_text": null,
@@ -1384,15 +2495,15 @@
     {
       "id": "kpi_triplet_21",
       "subject": {
-        "id": "2",
-        "type": "DataSource",
-        "name": "Piwik PRO Analytics Suite"
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
       },
-      "predicate": "locatedIn",
+      "predicate": "belongsTo",
       "object": {
-        "id": "3",
+        "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce Analytics"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1401,17 +2512,17 @@
     {
       "id": "kpi_triplet_22",
       "subject": {
-        "id": "5",
-        "type": "Metric",
-        "name": "Conversion Rate"
-      },
-      "predicate": "measures",
-      "object": {
-        "id": "6",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Cart Abandonment Rate"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.9,
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
@@ -1420,30 +2531,30 @@
       "subject": {
         "id": "kpi_1",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_24",
       "subject": {
-        "id": "kpi_1",
+        "id": "kpi_2",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Click-Through Rate (CTR)"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1452,15 +2563,15 @@
     {
       "id": "kpi_triplet_25",
       "subject": {
-        "id": "kpi_1",
+        "id": "kpi_2",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Click-Through Rate (CTR)"
       },
-      "predicate": "belongsTo",
+      "predicate": "measures",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "metric_2",
+        "type": "Metric",
+        "name": "Average Online Shopping Cart Abandonment Rate"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1469,34 +2580,34 @@
     {
       "id": "kpi_triplet_26",
       "subject": {
-        "id": "kpi_1",
+        "id": "kpi_2",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Click-Through Rate (CTR)"
       },
-      "predicate": "hasDefinition",
+      "predicate": "belongsTo",
       "object": {
-        "id": "kpi_1",
-        "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
-      "confidence": 0.95,
+      "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_27",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
-        "id": "kpi_1",
+        "id": "kpi_2",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Click-Through Rate (CTR)"
       },
-      "confidence": 0.85,
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
@@ -1505,13 +2616,13 @@
       "subject": {
         "id": "kpi_2",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Click-Through Rate (CTR)"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1522,15 +2633,15 @@
       "subject": {
         "id": "kpi_2",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Click-Through Rate (CTR)"
       },
-      "predicate": "belongsTo",
+      "predicate": "hasDefinition",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
@@ -1539,13 +2650,13 @@
       "subject": {
         "id": "kpi_2",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Click-Through Rate (CTR)"
       },
-      "predicate": "hasDefinition",
+      "predicate": "belongsTo",
       "object": {
-        "id": "kpi_2",
-        "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1554,66 +2665,66 @@
     {
       "id": "kpi_triplet_31",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
       },
-      "predicate": "contains",
+      "predicate": "hasDefinition",
       "object": {
         "id": "kpi_2",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
-      },
-      "confidence": 0.85,
-      "source_text": null,
-      "metadata": {}
-    },
-    {
-      "id": "kpi_triplet_32",
-      "subject": {
-        "id": "1",
-        "type": "KPI",
-        "name": "Funnel Performance"
-      },
-      "predicate": "measures",
-      "object": {
-        "id": "2",
-        "type": "DataSource",
-        "name": "Piwik PRO Analytics Suite"
-      },
-      "confidence": 0.9,
-      "source_text": null,
-      "metadata": {}
-    },
-    {
-      "id": "kpi_triplet_33",
-      "subject": {
-        "id": "1",
-        "type": "KPI",
-        "name": "Funnel Performance"
-      },
-      "predicate": "belongsTo",
-      "object": {
-        "id": "3",
-        "type": "Domain",
-        "name": "Ecommerce Analytics"
+        "name": "Click-Through Rate (CTR)"
       },
       "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
-      "id": "kpi_triplet_34",
+      "id": "kpi_triplet_32",
       "subject": {
-        "id": "kpi_1",
+        "id": "kpi_2",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Click-Through Rate (CTR)"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_33",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_34",
+      "subject": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "predicate": "dependsOn",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1622,15 +2733,15 @@
     {
       "id": "kpi_triplet_35",
       "subject": {
-        "id": "kpi_1",
+        "id": "kpi_3",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Engagement Rate"
       },
-      "predicate": "belongsTo",
+      "predicate": "hasDefinition",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1639,15 +2750,15 @@
     {
       "id": "kpi_triplet_36",
       "subject": {
-        "id": "kpi_1",
+        "id": "kpi_3",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Engagement Rate"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1656,15 +2767,15 @@
     {
       "id": "kpi_triplet_37",
       "subject": {
-        "id": "kpi_1",
+        "id": "kpi_3",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Engagement Rate"
       },
       "predicate": "hasDefinition",
       "object": {
-        "id": "kpi_1",
+        "id": "kpi_3",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Engagement Rate"
       },
       "confidence": 0.95,
       "source_text": null,
@@ -1673,49 +2784,49 @@
     {
       "id": "kpi_triplet_38",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
-        "id": "kpi_1",
+        "id": "kpi_3",
         "type": "KPI",
-        "name": "Customer Lifetime Value (CLV)"
+        "name": "Engagement Rate"
       },
-      "confidence": 0.85,
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_39",
       "subject": {
-        "id": "kpi_2",
+        "id": "kpi_3",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Engagement Rate"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_40",
       "subject": {
-        "id": "kpi_2",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Keyword Performance"
       },
       "predicate": "belongsTo",
       "object": {
         "id": "domain_1",
         "type": "Domain",
-        "name": "Ecommerce"
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1724,15 +2835,15 @@
     {
       "id": "kpi_triplet_41",
       "subject": {
-        "id": "kpi_2",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Keyword Performance"
       },
-      "predicate": "hasDefinition",
+      "predicate": "belongsTo",
       "object": {
-        "id": "kpi_2",
-        "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1741,32 +2852,32 @@
     {
       "id": "kpi_triplet_42",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
-        "id": "kpi_2",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Average Order Value by Channel"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.85,
+      "predicate": "measures",
+      "object": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "confidence": 0.9,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_43",
       "subject": {
-        "id": "kpi_3",
-        "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
       },
-      "predicate": "belongsTo",
+      "predicate": "measures",
       "object": {
-        "id": "domain_1",
-        "type": "Domain",
-        "name": "Ecommerce"
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1775,15 +2886,15 @@
     {
       "id": "kpi_triplet_44",
       "subject": {
-        "id": "kpi_3",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Keyword Performance"
       },
-      "predicate": "hasDefinition",
+      "predicate": "belongsTo",
       "object": {
-        "id": "kpi_3",
-        "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
       "source_text": null,
@@ -1792,51 +2903,2737 @@
     {
       "id": "kpi_triplet_45",
       "subject": {
-        "id": "table_1",
-        "type": "Table",
-        "name": "ecommerce_funnel"
-      },
-      "predicate": "contains",
-      "object": {
-        "id": "kpi_3",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Revenue per Visitor (RPV)"
+        "name": "Keyword Performance"
       },
-      "confidence": 0.85,
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_46",
       "subject": {
-        "id": "kpi_4",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Cart Abandonment Rate"
+        "name": "Keyword Performance"
       },
-      "predicate": "hasDefinition",
+      "predicate": "belongsTo",
       "object": {
-        "id": "kpi_4",
-        "type": "KPI",
-        "name": "Cart Abandonment Rate"
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
-      "confidence": 0.9,
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     },
     {
       "id": "kpi_triplet_47",
       "subject": {
-        "id": "kpi_5",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Repeat Purchase Rate (RPR)"
+        "name": "Keyword Performance"
       },
       "predicate": "hasDefinition",
       "object": {
-        "id": "kpi_5",
+        "id": "kpi_1",
         "type": "KPI",
-        "name": "Repeat Purchase Rate (RPR)"
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_48",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_49",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
       },
       "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_50",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_51",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_52",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_53",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_2",
+        "type": "Metric",
+        "name": "Average Online Shopping Cart Abandonment Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_54",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_55",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_56",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_57",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_58",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_59",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_60",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_61",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_62",
+      "subject": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "predicate": "dependsOn",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_63",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_64",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_65",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_66",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_67",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_68",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_69",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_70",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_71",
+      "subject": {
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_72",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_73",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_74",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_75",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_76",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_77",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_78",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_79",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_80",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_81",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_2",
+        "type": "Metric",
+        "name": "Average Online Shopping Cart Abandonment Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_82",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_83",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_84",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_85",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_86",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_87",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_88",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_89",
+      "subject": {
+        "id": "2",
+        "type": "KPI",
+        "name": "Funnel Performance"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "5",
+        "type": "Metric",
+        "name": "Conversion Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_90",
+      "subject": {
+        "id": "1",
+        "type": "Domain",
+        "name": "Ecommerce Analytics"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "2",
+        "type": "KPI",
+        "name": "Funnel Performance"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_91",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_92",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_93",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_94",
+      "subject": {
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_95",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_96",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_97",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_98",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_99",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_100",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_101",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_102",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_103",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_104",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_2",
+        "type": "Metric",
+        "name": "Average Online Shopping Cart Abandonment Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_105",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_106",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_107",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_108",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_109",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_110",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_111",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_112",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_113",
+      "subject": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "predicate": "dependsOn",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_114",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_115",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_116",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_117",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_118",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_119",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_120",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_121",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_122",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_123",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_124",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_125",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_126",
+      "subject": {
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_127",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_128",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_129",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_130",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_131",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_132",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_133",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_134",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_135",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_136",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_2",
+        "type": "Metric",
+        "name": "Average Online Shopping Cart Abandonment Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_137",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_138",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_139",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_140",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_141",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_142",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_143",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_144",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_145",
+      "subject": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "predicate": "dependsOn",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_146",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_147",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_148",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_149",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_150",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_151",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_152",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_153",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_154",
+      "subject": {
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_155",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_156",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_157",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_158",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_159",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_160",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_161",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_162",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_163",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_164",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_2",
+        "type": "Metric",
+        "name": "Average Online Shopping Cart Abandonment Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_165",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_166",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_167",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_168",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_169",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_170",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_171",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_172",
+      "subject": {
+        "id": "entity_15",
+        "type": "KPI",
+        "name": "Conversion Tracking"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.85,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_173",
+      "subject": {
+        "id": "entity_16",
+        "type": "KPI",
+        "name": "Remarketing"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "entity_11",
+        "type": "Domain",
+        "name": "Web Analytics"
+      },
+      "confidence": 0.85,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_174",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_175",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_176",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_177",
+      "subject": {
+        "id": "metric_3",
+        "type": "Metric",
+        "name": "Site Search Usage"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_178",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_179",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_180",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_181",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_182",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_183",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_184",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_185",
+      "subject": {
+        "id": "kpi_1",
+        "type": "KPI",
+        "name": "Keyword Performance"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_186",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_187",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "measures",
+      "object": {
+        "id": "metric_2",
+        "type": "Metric",
+        "name": "Average Online Shopping Cart Abandonment Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_188",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_189",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_190",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_191",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_192",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_193",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_194",
+      "subject": {
+        "id": "kpi_2",
+        "type": "KPI",
+        "name": "Click-Through Rate (CTR)"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_195",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_196",
+      "subject": {
+        "id": "metric_1",
+        "type": "Metric",
+        "name": "Bounce Rate Calculation"
+      },
+      "predicate": "dependsOn",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_197",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_198",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_199",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_200",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_201",
+      "subject": {
+        "id": "kpi_3",
+        "type": "KPI",
+        "name": "Engagement Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_202",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_203",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.9,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_204",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "hasDefinition",
+      "object": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "confidence": 0.95,
+      "source_text": null,
+      "metadata": {}
+    },
+    {
+      "id": "kpi_triplet_205",
+      "subject": {
+        "id": "kpi_4",
+        "type": "KPI",
+        "name": "Bounce Rate"
+      },
+      "predicate": "belongsTo",
+      "object": {
+        "id": "domain_1",
+        "type": "Domain",
+        "name": "Ecommerce KPIs"
+      },
+      "confidence": 0.95,
       "source_text": null,
       "metadata": {}
     }

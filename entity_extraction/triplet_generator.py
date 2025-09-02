@@ -22,7 +22,7 @@ from dotenv import load_dotenv
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from entity_extraction import ExtractionResult
-from entity_extraction.triplet_generator_class import TripletGenerator
+from triplet_generator_class import TripletGenerator
 from entity_extraction.models import Entity, Relationship, EntityType, PredicateType
 
 load_dotenv()
