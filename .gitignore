@@ -8,8 +8,11 @@ wheels/
 
 # Virtual environments
 .venv
-
 .env
 
 /sources
 sources/
+
+*.png
+*.db
+*.htmn
