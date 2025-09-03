@@ -1,24 +1,28 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-09-02T10:58:40.575845",
-    "total_chunks_processed": 6,
+    "timestamp": "2025-09-02T14:18:00.642326",
+    "total_chunks_processed": 40,
     "extraction_stats": {
-      "total_entities": 33,
-      "total_relationships": 27,
+      "total_entities": 164,
+      "total_relationships": 147,
       "entities_by_type": {
-        "KPI": 15,
-        "Domain": 5,
-        "DataSource": 4,
-        "Metric": 6,
-        "Table": 3
+        "KPI": 69,
+        "Domain": 26,
+        "DataSource": 21,
+        "Metric": 16,
+        "Table": 12,
+        "Column": 17,
+        "Formula": 3
       },
       "relationships_by_predicate": {
-        "belongsTo": 11,
-        "locatedIn": 5,
-        "measures": 4,
-        "hasDefinition": 2,
-        "contains": 4,
-        "calculatedBy": 1
+        "belongsTo": 45,
+        "locatedIn": 21,
+        "measures": 10,
+        "hasDefinition": 24,
+        "contains": 30,
+        "calculatedBy": 12,
+        "dependsOn": 4,
+        "derivedFrom": 1
       }
     }
   },
@@ -111,10 +115,10 @@
       "id": "1",
       "type": "KPI",
       "name": "Returning Visitors",
-      "description": "Metric that determines how many people have visited and returned to a website.",
+      "description": "Metric to determine how many people have visited and returned to a website.",
       "confidence": 0.95,
       "attributes": {
-        "definition": "Calculated by dividing the number of repeat visitors by the total number of unique visitors to your site in a given time period."
+        "definition": "Calculated by dividing the number of repeat visitors by the total number of unique visitors in a given time period."
       },
       "source_chunk_id": "chunk_2"
     },
@@ -122,10 +126,10 @@
       "id": "2",
       "type": "Metric",
       "name": "Cart-to-Detail Rate",
-      "description": "Shows the ratio of cart additions to views of the product page.",
+      "description": "Ratio of cart additions to views of the product page.",
       "confidence": 0.95,
       "attributes": {
-        "formula": "Number of unique products added to a cart / Number of times they have been visited"
+        "formula": "Number of unique products added to cart / Number of times product pages have been visited"
       },
       "source_chunk_id": "chunk_2"
     },
@@ -142,12 +146,12 @@
     },
     {
       "id": "4",
-      "type": "Metric",
-      "name": "Average Cart Abandonment Rate",
-      "description": "Average rate of cart abandonment in online shopping.",
-      "confidence": 0.9,
+      "type": "KPI",
+      "name": "Cart Abandonment Rate",
+      "description": "Average online shopping cart abandonment rate.",
+      "confidence": 0.95,
       "attributes": {
-        "formula": "70.19%"
+        "definition": "The average online shopping cart abandonment rate is 70.19%."
       },
       "source_chunk_id": "chunk_2"
     },
@@ -158,18 +162,18 @@
       "description": "Analyzes how visitors use the site’s search function.",
       "confidence": 0.9,
       "attributes": {
-        "definition": "Includes the search terms they enter and the impact of the search results on engagement."
+        "definition": "Includes the search terms entered and the impact of search results on engagement."
       },
       "source_chunk_id": "chunk_2"
     },
     {
       "id": "6",
       "type": "KPI",
-      "name": "Cart Abandonment Rate",
-      "description": "Rate at which customers add items to their shopping cart but fail to complete the purchase.",
-      "confidence": 0.95,
+      "name": "Cart-to-Detail Rate Improvement",
+      "description": "Improvement in cart-to-detail rate through better product information.",
+      "confidence": 0.9,
       "attributes": {
-        "definition": "Can be caused by various factors such as unavailability of payment methods or high shipping charges."
+        "definition": "Providing detailed product information can lead to a high cart-to-detail rate."
       },
       "source_chunk_id": "chunk_2"
     },
@@ -188,50 +192,37 @@
       "id": "kpi_2",
       "type": "KPI",
       "name": "Ecommerce Key Performance Indicators",
-      "description": "KPIs specifically for ecommerce to measure performance.",
+      "description": "KPIs specifically related to ecommerce performance.",
       "confidence": 0.9,
       "attributes": {
-        "definition": "Key performance indicators that help in measuring the success of ecommerce activities."
-      },
-      "source_chunk_id": "chunk_3"
-    },
-    {
-      "id": "data_source_1",
-      "type": "DataSource",
-      "name": "Piwik PRO",
-      "description": "Analytics platform used for tracking ecommerce performance.",
-      "confidence": 0.95,
-      "attributes": {
-        "type": "Analytics Platform"
-      },
-      "source_chunk_id": "chunk_3"
-    },
-    {
-      "id": "domain_1",
-      "type": "Domain",
-      "name": "Ecommerce",
-      "description": "Business area focused on online sales and marketing.",
-      "confidence": 0.95,
-      "attributes": {},
-      "source_chunk_id": "chunk_3"
-    },
-    {
-      "id": "metric_1",
-      "type": "Metric",
-      "name": "Funnel Performance",
-      "description": "Measures the effectiveness of the sales funnel.",
-      "confidence": 0.9,
-      "attributes": {
-        "formula": "Conversion Rate = (Number of Purchases / Total Visitors) * 100"
+        "definition": "Metrics that help in evaluating the performance of ecommerce activities."
       },
       "source_chunk_id": "chunk_3"
     },
     {
       "id": "table_1",
       "type": "Table",
-      "name": "Funnel Reports",
-      "description": "Table containing data related to funnel performance metrics.",
+      "name": "Piwik PRO Funnel Reports",
+      "description": "Reports that track events in the ecommerce funnel.",
       "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_3"
+    },
+    {
+      "id": "table_2",
+      "type": "Table",
+      "name": "Shopping Behavior Report",
+      "description": "A funnel-based report analyzing customer journey.",
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_3"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Online Marketing",
+      "description": "Business area focused on marketing strategies in the online space.",
+      "confidence": 0.9,
       "attributes": {},
       "source_chunk_id": "chunk_3"
     },
@@ -239,7 +230,7 @@
       "id": "1",
       "type": "Domain",
       "name": "Ecommerce Analytics",
-      "description": "Analytics focused on ecommerce platforms and customer behavior.",
+      "description": "Analytics focused on ecommerce performance and customer behavior.",
       "confidence": 0.95,
       "attributes": {},
       "source_chunk_id": "chunk_4"
@@ -256,8 +247,8 @@
     {
       "id": "4",
       "type": "Table",
-      "name": "Customer Data Platform",
-      "description": "A centralized platform for managing customer data.",
+      "name": "Customer Journey",
+      "description": "Data structure that maps the entire customer journey based on behavioral segmentation.",
       "confidence": 0.85,
       "attributes": {},
       "source_chunk_id": "chunk_4"
@@ -277,9 +268,7 @@
       "name": "Customer Lifetime Value (CLV)",
       "description": "Total revenue a customer generates over their relationship with the company",
       "confidence": 0.95,
-      "attributes": {
-        "definition": "Customer Lifetime Value is the total revenue a customer generates over their relationship with the company"
-      },
+      "attributes": {},
       "source_chunk_id": "chunk_5"
     },
     {
@@ -328,24 +317,46 @@
       "source_chunk_id": "chunk_5"
     },
     {
-      "id": "metric_1",
-      "type": "Metric",
-      "name": "Conversion Rate",
-      "description": "Percentage of visitors who complete a desired action",
-      "confidence": 0.9,
+      "id": "column_1",
+      "type": "Column",
+      "name": "Traffic Source/Medium",
+      "description": "Source or medium through which traffic arrives at the ecommerce site",
+      "confidence": 0.85,
       "attributes": {
-        "formula": "Number of Conversions / Total Visitors * 100"
+        "type": "string"
       },
       "source_chunk_id": "chunk_5"
     },
     {
-      "id": "data_source_1",
-      "type": "DataSource",
-      "name": "Google Analytics",
-      "description": "Web analytics service to track and report website traffic",
-      "confidence": 0.95,
+      "id": "column_2",
+      "type": "Column",
+      "name": "Organic Traffic Sessions",
+      "description": "Number of sessions generated from organic search traffic",
+      "confidence": 0.85,
       "attributes": {
-        "type": "Analytics Platform"
+        "type": "integer"
+      },
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "column_3",
+      "type": "Column",
+      "name": "SEO Keyword Positions",
+      "description": "Ranking positions of keywords in search engine results",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "integer"
+      },
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "column_4",
+      "type": "Column",
+      "name": "Click-through Rate (CTR)",
+      "description": "Percentage of users who click on a link compared to the total users who view a page",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "decimal"
       },
       "source_chunk_id": "chunk_5"
     },
@@ -353,10 +364,1355 @@
       "id": "domain_1",
       "type": "Domain",
       "name": "Ecommerce",
-      "description": "Business area focused on online sales and transactions",
+      "description": "Business area focused on online sales and customer interactions",
       "confidence": 0.95,
       "attributes": {},
       "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Average Order Value",
+      "description": "The average value of each order placed through a specific channel over a set period.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Average Order Value is calculated by dividing the revenue by the number of orders."
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "metric_1",
+      "type": "Metric",
+      "name": "Average Order Value Calculation",
+      "description": "Calculation method for Average Order Value.",
+      "confidence": 0.95,
+      "attributes": {
+        "formula": "Revenue / Number of Orders"
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Orders New vs. Returning",
+      "description": "Tracking the ratio of orders from new and returning customers.",
+      "confidence": 0.9,
+      "attributes": {
+        "definition": "Essential to gauge the success of marketing efforts and loyalty programs."
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "kpi_3",
+      "type": "KPI",
+      "name": "Revenue by Product",
+      "description": "Percentage of total revenue generated by a particular product.",
+      "confidence": 0.9,
+      "attributes": {
+        "definition": "Helps identify the products with the highest sales."
+      },
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Ecommerce",
+      "description": "Business area focused on online sales and marketing.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Traffic Source/Medium",
+      "description": "Indicates where new visitors come from and how they engage with the website.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The source refers to the starting point of your website’s visitors, such as a search engine or a specific domain."
+      },
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Organic Traffic Sessions",
+      "description": "Measures the number of sessions initiated by visitors coming from organic search results.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Tracks the number of website visitors who found your link through a search engine result page rather than through paid ads."
+      },
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Ecommerce",
+      "description": "Business area focused on online sales and marketing.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "metric_1",
+      "type": "Metric",
+      "name": "Website Visitor Insight",
+      "description": "Insight into the number of visitors discovering the site through search engines.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Number of visitors from search engines"
+      },
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "entity_1",
+      "type": "Table",
+      "name": "Piwik PRO vs. GA3 & GA4",
+      "description": "Comparison table between Piwik PRO and Google Analytics versions.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_2",
+      "type": "Table",
+      "name": "Piwik PRO vs. Matomo",
+      "description": "Comparison table between Piwik PRO and Matomo.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_3",
+      "type": "Table",
+      "name": "Piwik PRO vs. Adobe Analytics",
+      "description": "Comparison table between Piwik PRO and Adobe Analytics.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_4",
+      "type": "Table",
+      "name": "PP Tag Manager vs. GTM",
+      "description": "Comparison table between PP Tag Manager and Google Tag Manager.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_5",
+      "type": "Domain",
+      "name": "Web Analytics",
+      "description": "Field related to web analytics tools and comparisons.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "entity_6",
+      "type": "KPI",
+      "name": "Maximizing Funnel Performance",
+      "description": "Key performance indicator for ecommerce funnel optimization.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Keyword Performance",
+      "description": "Tracking the topics and search terms on your website that attract the most traffic.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Helps understand the most relevant and high-impact keywords."
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Click-Through Rate (CTR)",
+      "description": "Measures the number of users who clicked a link compared to the number of impressions.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Indicates how well content and marketing campaigns reach the target audience."
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "kpi_3",
+      "type": "KPI",
+      "name": "Engagement Rate",
+      "description": "Evaluates the level of engagement with a product or content.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "A high engagement rate can result in more clicks and conversions."
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "kpi_4",
+      "type": "KPI",
+      "name": "Bounce Rate",
+      "description": "Percentage of people who enter a single page and leave without further action.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Indicates the success of a single landing page."
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "metric_1",
+      "type": "Metric",
+      "name": "Bounce Rate Calculation",
+      "description": "Calculated measure of bounce rate.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Bounce Rate = Single-Page Sessions / All Sessions"
+      },
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Ecommerce KPIs",
+      "description": "Business area focusing on key performance indicators for ecommerce.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "1",
+      "type": "Domain",
+      "name": "Analytics",
+      "description": "Field related to data analysis and performance measurement.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_10"
+    },
+    {
+      "id": "2",
+      "type": "Domain",
+      "name": "Banking & Finance",
+      "description": "Sector dealing with financial services and products.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_10"
+    },
+    {
+      "id": "3",
+      "type": "Domain",
+      "name": "Data Privacy & Security",
+      "description": "Area focused on protecting data and ensuring compliance with regulations.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_10"
+    },
+    {
+      "id": "4",
+      "type": "KPI",
+      "name": "Funnel Performance",
+      "description": null,
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_10"
+    },
+    {
+      "id": "6",
+      "type": "Table",
+      "name": "Customer Data Platform",
+      "description": "A system that consolidates customer data from various sources.",
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_10"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Return on Investment (ROI)",
+      "description": "Indicates the amount gained or lost in comparison to the initial investment.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "ROI is a crucial metric for your business, indicating the amount gained (positive ROI) or lost (negative ROI) in comparison to the initial investment.",
+        "formula": "Gain or net benefits earned / Cost paid"
+      },
+      "source_chunk_id": "chunk_11"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Repeat Purchase Rate (RPR)",
+      "description": "Measures customer loyalty and satisfaction based on repeat purchases.",
+      "confidence": 0.9,
+      "attributes": {
+        "definition": "A high RPR indicates that your customers are happy with your products, services, and overall experience."
+      },
+      "source_chunk_id": "chunk_11"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Ecommerce Analytics",
+      "description": "Business area focused on analyzing ecommerce performance and customer behavior.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_11"
+    },
+    {
+      "id": "data_source_1",
+      "type": "DataSource",
+      "name": "Piwik PRO",
+      "description": "Analytics platform for ecommerce that provides insights into KPIs and customer behavior.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Analytics Platform"
+      },
+      "source_chunk_id": "chunk_11"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Revenue per Visitor",
+      "description": "Measures the revenue generated by the business from each customer visit.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Revenue per Visitor is calculated by dividing total revenue by the number of website visitors during a given timeframe."
+      },
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Customer Lifetime Value",
+      "description": "Reflects the total profits customers generate throughout their interactions with the company.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Customer Lifetime Value is calculated by multiplying the average purchase value, purchase frequency, and customer lifespan."
+      },
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "kpi_3",
+      "type": "KPI",
+      "name": "Repeat Purchase Rate",
+      "description": "Measures how many customers make multiple purchases with a company.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Repeat Purchase Rate is calculated by analyzing the number of repeat customers and dividing it by the total number of customers."
+      },
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "kpi_4",
+      "type": "KPI",
+      "name": "Average Days Between Transactions",
+      "description": "Measures the time gap between a customer’s initial and subsequent purchases.",
+      "confidence": 0.9,
+      "attributes": {
+        "definition": "Average Days Between Transactions provides valuable information about customer behavior."
+      },
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "kpi_5",
+      "type": "KPI",
+      "name": "Top-Bought Products",
+      "description": "Evaluates the most popular products in terms of volume and revenue.",
+      "confidence": 0.9,
+      "attributes": {
+        "definition": "Top-Bought Products KPI allows you to see your most popular products in a given period."
+      },
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "entity_1",
+      "type": "DataSource",
+      "name": "Google Analytics",
+      "description": "A web analytics service that tracks and reports website traffic.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Web Analytics"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_2",
+      "type": "KPI",
+      "name": "eCommerce Analytics KPIs",
+      "description": "Key Performance Indicators for measuring eCommerce performance.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_3",
+      "type": "Column",
+      "name": "account name",
+      "description": "The name of the Google Analytics account.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_4",
+      "type": "Column",
+      "name": "website name",
+      "description": "The name of the website being tracked.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_5",
+      "type": "Column",
+      "name": "URL",
+      "description": "The web address of the website being tracked.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_6",
+      "type": "Column",
+      "name": "industry",
+      "description": "The industry category of the website.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_7",
+      "type": "Column",
+      "name": "time-zone",
+      "description": "The time zone setting for the Google Analytics account.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_8",
+      "type": "Column",
+      "name": "data sharing settings",
+      "description": "Settings that determine how data is shared from Google Analytics.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_9",
+      "type": "Column",
+      "name": "tracking code",
+      "description": "JavaScript code added to web pages for tracking.",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "entity_10",
+      "type": "Column",
+      "name": "measurement ID",
+      "description": "Identifier for the tracking code in Google Analytics.",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "1",
+      "type": "Metric",
+      "name": "Average Order Value",
+      "description": "Calculates the average money spent by a customer when they place an order.",
+      "confidence": 0.95,
+      "attributes": {
+        "formula": "Total Revenue / Number of Orders"
+      },
+      "source_chunk_id": "chunk_14"
+    },
+    {
+      "id": "2",
+      "type": "KPI",
+      "name": "Average Order Value (AOV)",
+      "description": "A metric that indicates the average amount spent per order.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_14"
+    },
+    {
+      "id": "1",
+      "type": "KPI",
+      "name": "Cost Per Lead (CPL)",
+      "description": "A key performance indicator that measures the cost-effectiveness of generating leads through various channels.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "CPL is calculated to determine which channels generate the most leads."
+      },
+      "source_chunk_id": "chunk_16"
+    },
+    {
+      "id": "2",
+      "type": "Domain",
+      "name": "Marketing",
+      "description": "The business area focused on promoting and selling products or services.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_16"
+    },
+    {
+      "id": "1",
+      "type": "KPI",
+      "name": "Customer Acquisition Cost",
+      "description": "Measures the amount spent in sales and marketing to gain one new customer for a particular period.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The customer acquisition cost (CAC) measures the amount spent in sales and marketing to gain one new customer for a particular period."
+      },
+      "source_chunk_id": "chunk_18"
+    },
+    {
+      "id": "2",
+      "type": "Formula",
+      "name": "Customer Acquisition Cost Formula",
+      "description": "Formula used to calculate Customer Acquisition Cost.",
+      "confidence": 0.9,
+      "attributes": {
+        "expression": "Total Sales and Marketing Costs / Number of New Customers"
+      },
+      "source_chunk_id": "chunk_18"
+    },
+    {
+      "id": "3",
+      "type": "DataSource",
+      "name": "ayeT-Studios",
+      "description": "Source of information regarding customer acquisition cost.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "Research/Analysis"
+      },
+      "source_chunk_id": "chunk_18"
+    },
+    {
+      "id": "4",
+      "type": "Domain",
+      "name": "Sales & Marketing",
+      "description": "Business area related to customer acquisition.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_18"
+    },
+    {
+      "id": "entity_1",
+      "type": "KPI",
+      "name": "Click-Through Rate",
+      "description": "The percentage of people who clicked and viewed your link, email, or post.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The ratio of clicks to the total number of impressions on the landing page or email."
+      },
+      "source_chunk_id": "chunk_19"
+    },
+    {
+      "id": "entity_2",
+      "type": "Metric",
+      "name": "Click-Through Rate",
+      "description": "A calculated measure of the effectiveness of marketing campaigns.",
+      "confidence": 0.95,
+      "attributes": {
+        "formula": "Clicks / Impressions"
+      },
+      "source_chunk_id": "chunk_19"
+    },
+    {
+      "id": "entity_3",
+      "type": "Domain",
+      "name": "Marketing",
+      "description": "The business area related to marketing campaigns and their effectiveness.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_19"
+    },
+    {
+      "id": "1",
+      "type": "KPI",
+      "name": "Net Promoter Score (NPS)",
+      "description": "A metric used to gauge customer loyalty and satisfaction based on survey responses.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "NPS is calculated based on customer responses to survey questions, classifying them into Promoters, Passives, and Detractors."
+      },
+      "source_chunk_id": "chunk_20"
+    },
+    {
+      "id": "2",
+      "type": "Metric",
+      "name": "Promoters",
+      "description": "Customers who score 9-10 on the NPS survey.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Count of Promoters / Total Responses"
+      },
+      "source_chunk_id": "chunk_20"
+    },
+    {
+      "id": "3",
+      "type": "Metric",
+      "name": "Passives",
+      "description": "Customers who score 7-8 on the NPS survey.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Count of Passives / Total Responses"
+      },
+      "source_chunk_id": "chunk_20"
+    },
+    {
+      "id": "4",
+      "type": "Metric",
+      "name": "Detractors",
+      "description": "Customers who score 0-6 on the NPS survey.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Count of Detractors / Total Responses"
+      },
+      "source_chunk_id": "chunk_20"
+    },
+    {
+      "id": "entity_1",
+      "type": "DataSource",
+      "name": "Google Analytics",
+      "description": "A popular web analytics tool used for tracking website traffic and user behavior.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Web Analytics Tool"
+      },
+      "source_chunk_id": "chunk_21"
+    },
+    {
+      "id": "entity_2",
+      "type": "KPI",
+      "name": "Website Traffic",
+      "description": "The amount of data sent and received by visitors to a website.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_21"
+    },
+    {
+      "id": "entity_3",
+      "type": "KPI",
+      "name": "User Behavior",
+      "description": "The actions taken by users on a website, which can be tracked and analyzed.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_21"
+    },
+    {
+      "id": "entity_4",
+      "type": "Column",
+      "name": "Tracking ID",
+      "description": "A unique identifier used to track activities and user behavior on a website.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "String"
+      },
+      "source_chunk_id": "chunk_21"
+    },
+    {
+      "id": "1",
+      "type": "KPI",
+      "name": "Repeat Purchase Rate",
+      "description": "Measure of the percentage of customers who have made repeat purchases from your brand within a specified period.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The percentage of customers who have made repeat purchases from your brand within a specified period."
+      },
+      "source_chunk_id": "chunk_22"
+    },
+    {
+      "id": "2",
+      "type": "Metric",
+      "name": "Repeat Purchase Rate Calculation",
+      "description": "Calculation method for determining the Repeat Purchase Rate.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Number of Repeat Purchases / Total Customers * 100"
+      },
+      "source_chunk_id": "chunk_22"
+    },
+    {
+      "id": "3",
+      "type": "Domain",
+      "name": "Customer Experience",
+      "description": "Business area focusing on customer satisfaction and loyalty.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_22"
+    },
+    {
+      "id": "4",
+      "type": "KPI",
+      "name": "Customer Lifetime Value",
+      "description": "Total revenue a customer generates over their relationship with the company.",
+      "confidence": 0.85,
+      "attributes": {
+        "definition": "Customer Lifetime Value is the total revenue a customer generates over their relationship with the company."
+      },
+      "source_chunk_id": "chunk_22"
+    },
+    {
+      "id": "entity_1",
+      "type": "KPI",
+      "name": "Engagement Rate",
+      "description": "A measure of the rate and level of interaction by prospects with social media content or web pages.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The engagement rate is a way of measuring the rate and level of interaction by prospects with your social media content or web pages."
+      },
+      "source_chunk_id": "chunk_23"
+    },
+    {
+      "id": "entity_2",
+      "type": "DataSource",
+      "name": "Google Analytics 4",
+      "description": "A web analytics service that provides statistics and basic analytical tools for search engine optimization.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Web Analytics Tool"
+      },
+      "source_chunk_id": "chunk_23"
+    },
+    {
+      "id": "entity_3",
+      "type": "Metric",
+      "name": "Engaged Session",
+      "description": "A session that meets specific engagement criteria.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Lasts more than 10 seconds OR Contains one or more page view OR One or more conversion event"
+      },
+      "source_chunk_id": "chunk_23"
+    },
+    {
+      "id": "entity_4",
+      "type": "KPI",
+      "name": "Conversion Stage KPIs",
+      "description": "Key Performance Indicators relevant to the conversion stage of the customer journey.",
+      "confidence": 0.9,
+      "attributes": {
+        "definition": "There are three top KPIs you can’t miss in the conversion stage of the customer journey."
+      },
+      "source_chunk_id": "chunk_23"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Daily Sessions",
+      "description": "Number of sessions occurring daily",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Monthly Users",
+      "description": "Number of unique users in a month",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "table_1",
+      "type": "Table",
+      "name": "Pricing Plans",
+      "description": "Table containing different pricing plans for services",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "column_1",
+      "type": "Column",
+      "name": "Plan Name",
+      "description": "Name of the pricing plan",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "string"
+      },
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "column_2",
+      "type": "Column",
+      "name": "Monthly Cost",
+      "description": "Cost of the plan per month",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "decimal"
+      },
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "column_3",
+      "type": "Column",
+      "name": "Daily Sessions Cost",
+      "description": "Cost associated with daily sessions",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "decimal"
+      },
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "column_4",
+      "type": "Column",
+      "name": "Add-On Costs",
+      "description": "Additional costs that may apply",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "decimal"
+      },
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "eCommerce Analytics",
+      "description": "Domain related to analytics in eCommerce",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "1",
+      "type": "KPI",
+      "name": "Cost Per Lead",
+      "description": "The amount of money spent on ads and marketing campaigns to generate a new lead.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "CPL is a crucial component of the cost-per-lead ad pricing model."
+      },
+      "source_chunk_id": "chunk_25"
+    },
+    {
+      "id": "2",
+      "type": "Domain",
+      "name": "Advertising",
+      "description": "Business area related to running ads and marketing campaigns.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_25"
+    },
+    {
+      "id": "3",
+      "type": "DataSource",
+      "name": "Third-party website",
+      "description": "Website where ads are run and leads are generated.",
+      "confidence": 0.85,
+      "attributes": {
+        "type": "Advertising Platform"
+      },
+      "source_chunk_id": "chunk_25"
+    },
+    {
+      "id": "4",
+      "type": "Metric",
+      "name": "Average CPL",
+      "description": "Average cost per lead across industries.",
+      "confidence": 0.8,
+      "attributes": {
+        "formula": "Total Ad Spend / Total Leads Generated"
+      },
+      "source_chunk_id": "chunk_25"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Funnel Performance",
+      "description": "Analysis of the effectiveness of the sales funnel.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_26"
+    },
+    {
+      "id": "data_source_1",
+      "type": "DataSource",
+      "name": "Kissmetrics",
+      "description": "A tool providing deep tracking and insights into customer behavior.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Analytics Tool"
+      },
+      "source_chunk_id": "chunk_26"
+    },
+    {
+      "id": "data_source_2",
+      "type": "DataSource",
+      "name": "Hotjar",
+      "description": "A tool for heatmaps and visitor recordings to analyze user behavior.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Analytics Tool"
+      },
+      "source_chunk_id": "chunk_26"
+    },
+    {
+      "id": "data_source_3",
+      "type": "DataSource",
+      "name": "Mixpanel",
+      "description": "A reporting and data analytics tool.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Analytics Tool"
+      },
+      "source_chunk_id": "chunk_26"
+    },
+    {
+      "id": "metric_1",
+      "type": "Metric",
+      "name": "Customer Behavior Insights",
+      "description": "Insights derived from tracking customer interactions.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Real-time monitoring of clicks, scrolls, and mouse movements"
+      },
+      "source_chunk_id": "chunk_26"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Customer Lifetime Value",
+      "description": "Measures the total amount of revenue earned from one customer throughout the relationship.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Customer Lifetime Value measures the total amount of revenue you’ve earned from one customer throughout your relationship with them."
+      },
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Gross Profit Value",
+      "description": "A measure of the profitability of a company.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "kpi_3",
+      "type": "KPI",
+      "name": "Average Order Value",
+      "description": "The average amount of money each customer spends per order.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "kpi_4",
+      "type": "KPI",
+      "name": "Conversion Rates",
+      "description": "The percentage of visitors who complete a desired action.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "1",
+      "type": "KPI",
+      "name": "Cost Per 1,000 Impressions (CPM)",
+      "description": "CPM refers to the amount you have spent for every 1,000 impressions on your webpage.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The amount spent for every 1,000 impressions on a webpage."
+      },
+      "source_chunk_id": "chunk_28"
+    },
+    {
+      "id": "2",
+      "type": "KPI",
+      "name": "Click-through Rate",
+      "description": "A metric that measures the effectiveness of landing pages, targeted ads, and email marketing.",
+      "confidence": 0.9,
+      "attributes": {
+        "definition": "The ratio of users who click on a specific link to the number of total users who view a page, email, or advertisement."
+      },
+      "source_chunk_id": "chunk_28"
+    },
+    {
+      "id": "3",
+      "type": "Domain",
+      "name": "eCommerce Analytics",
+      "description": "Business area focused on analyzing eCommerce performance metrics.",
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_28"
+    },
+    {
+      "id": "1",
+      "type": "KPI",
+      "name": "Customer Satisfaction Score (CSAT)",
+      "description": "Measures customer satisfaction levels with various aspects of the business.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The Customer Satisfaction Score (CSAT) is used to determine your customer’s satisfaction levels with various aspects of your business."
+      },
+      "source_chunk_id": "chunk_29"
+    },
+    {
+      "id": "2",
+      "type": "Formula",
+      "name": "CSAT Calculation",
+      "description": "Formula used to calculate Customer Satisfaction Score.",
+      "confidence": 0.9,
+      "attributes": {
+        "expression": "Average of customer feedback on a scale from 1 to 5"
+      },
+      "source_chunk_id": "chunk_29"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Organic Website Traffic",
+      "description": "Total number of organic, inbound traffic to your website.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Organic traffic is a measure of how many prospects found your website through search engines."
+      },
+      "source_chunk_id": "chunk_30"
+    },
+    {
+      "id": "kpi_2",
+      "type": "KPI",
+      "name": "Paid Website Traffic",
+      "description": "Total number of paid traffic to your website.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Measuring your paid website traffic will let you measure the success of your targeted ads."
+      },
+      "source_chunk_id": "chunk_30"
+    },
+    {
+      "id": "data_source_1",
+      "type": "DataSource",
+      "name": "Google Analytics",
+      "description": "Tool used to track website traffic metrics.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Web Analytics Tool"
+      },
+      "source_chunk_id": "chunk_30"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "Customer Journey",
+      "description": "Business area focusing on the stages of customer interaction.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_30"
+    },
+    {
+      "id": "entity_1",
+      "type": "DataSource",
+      "name": "Google Analytics",
+      "description": "A web analytics service that tracks and reports website traffic.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Web Analytics"
+      },
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "entity_4",
+      "type": "KPI",
+      "name": "Funnel Performance",
+      "description": null,
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "entity_5",
+      "type": "KPI",
+      "name": "User Retention",
+      "description": null,
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "entity_6",
+      "type": "Table",
+      "name": "Segmentations",
+      "description": "A table that contains data on user segments based on various attributes.",
+      "confidence": 0.8,
+      "attributes": {},
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "entity_1",
+      "type": "DataSource",
+      "name": "Google Analytics",
+      "description": "A web analytics service that tracks and reports website traffic.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Web Analytics"
+      },
+      "source_chunk_id": "chunk_32"
+    },
+    {
+      "id": "entity_2",
+      "type": "KPI",
+      "name": "Goals",
+      "description": "Metrics that measure the success of specific objectives in Google Analytics.",
+      "confidence": 0.9,
+      "attributes": {
+        "definition": "Goals are specific actions that you want users to take on your website."
+      },
+      "source_chunk_id": "chunk_32"
+    },
+    {
+      "id": "entity_3",
+      "type": "Domain",
+      "name": "eCommerce Analytics",
+      "description": "Business area focused on analyzing online sales and customer behavior.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_32"
+    },
+    {
+      "id": "entity_4",
+      "type": "Table",
+      "name": "GTM Container",
+      "description": "A snippet of code that manages analytics tags.",
+      "confidence": 0.85,
+      "attributes": {},
+      "source_chunk_id": "chunk_32"
+    },
+    {
+      "id": "1",
+      "type": "KPI",
+      "name": "Cart Abandonment Rate",
+      "description": "Measures the percentage of customers who added items to their cart and abandoned it before completing the purchase.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "The cart abandonment rate measures the percentage of customers who added items to their cart and abandoned it before completing the purchase."
+      },
+      "source_chunk_id": "chunk_33"
+    },
+    {
+      "id": "2",
+      "type": "Formula",
+      "name": "Cart Abandonment Rate Calculation",
+      "description": "Formula to calculate the cart abandonment rate.",
+      "confidence": 0.9,
+      "attributes": {
+        "expression": "Cart Abandonment Rate = (Abandoned Carts / Total Carts) * 100"
+      },
+      "source_chunk_id": "chunk_33"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "eCommerce KPIs",
+      "description": "Key Performance Indicators specific to eCommerce that help in monitoring sales performance.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Metrics that help in evaluating the effectiveness of eCommerce strategies."
+      },
+      "source_chunk_id": "chunk_34"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "eCommerce Analytics",
+      "description": "The area of analytics focused on eCommerce performance and metrics.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_34"
+    },
+    {
+      "id": "data_source_1",
+      "type": "DataSource",
+      "name": "Google Analytics",
+      "description": "A web analytics service that tracks and reports website traffic.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Web Analytics Tool"
+      },
+      "source_chunk_id": "chunk_34"
+    },
+    {
+      "id": "entity_1",
+      "type": "DataSource",
+      "name": "Google Analytics",
+      "description": "A web analytics service that tracks and reports website traffic.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Web Analytics Tool"
+      },
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "entity_2",
+      "type": "DataSource",
+      "name": "Adobe Marketing Cloud",
+      "description": "A comprehensive suite of marketing tools for analytics and reporting.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "Marketing Analytics Tool"
+      },
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "entity_3",
+      "type": "DataSource",
+      "name": "Kissmetrics",
+      "description": "A customer analytics platform that helps businesses understand their customers.",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "Customer Analytics Tool"
+      },
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "entity_4",
+      "type": "DataSource",
+      "name": "Hotjar",
+      "description": "A tool for analyzing user behavior on websites through heatmaps and recordings.",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "User Behavior Analytics Tool"
+      },
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "entity_5",
+      "type": "DataSource",
+      "name": "Mixpanel",
+      "description": "An advanced analytics platform for tracking user interactions with web and mobile applications.",
+      "confidence": 0.9,
+      "attributes": {
+        "type": "Product Analytics Tool"
+      },
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "entity_6",
+      "type": "KPI",
+      "name": "eCommerce Analytics KPIs",
+      "description": "Key Performance Indicators used to measure the effectiveness of eCommerce strategies.",
+      "confidence": 0.85,
+      "attributes": {
+        "definition": "Metrics that help evaluate the performance of eCommerce activities."
+      },
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "eCommerce KPIs",
+      "description": "Key Performance Indicators for eCommerce analytics.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Metrics that help evaluate the performance of eCommerce activities."
+      },
+      "source_chunk_id": "chunk_36"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "eCommerce",
+      "description": "Business area focused on online commercial transactions.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_36"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "eCommerce Analytics KPIs",
+      "description": "Key Performance Indicators relevant to eCommerce analytics.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Metrics that help measure the performance of eCommerce activities."
+      },
+      "source_chunk_id": "chunk_37"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "eCommerce",
+      "description": "Business area focused on online commerce.",
+      "confidence": 0.9,
+      "attributes": {},
+      "source_chunk_id": "chunk_37"
+    },
+    {
+      "id": "data_source_1",
+      "type": "DataSource",
+      "name": "EngageBay",
+      "description": "CRM and marketing automation platform.",
+      "confidence": 0.95,
+      "attributes": {
+        "type": "SaaS"
+      },
+      "source_chunk_id": "chunk_37"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "Organic Website Traffic",
+      "description": "A measure of the number of visitors to a website from organic search results.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Organic website traffic refers to the visitors who arrive at a website through unpaid search results."
+      },
+      "source_chunk_id": "chunk_38"
+    },
+    {
+      "id": "metric_1",
+      "type": "Metric",
+      "name": "Effectiveness of Referral Campaign",
+      "description": "A measure of how successful a referral campaign is in driving traffic or sales.",
+      "confidence": 0.9,
+      "attributes": {
+        "formula": "Number of Referrals / Total Campaign Reach"
+      },
+      "source_chunk_id": "chunk_38"
+    },
+    {
+      "id": "domain_1",
+      "type": "Domain",
+      "name": "eCommerce Analytics",
+      "description": "The area of business focused on analyzing data related to eCommerce activities.",
+      "confidence": 0.95,
+      "attributes": {},
+      "source_chunk_id": "chunk_38"
+    },
+    {
+      "id": "kpi_1",
+      "type": "KPI",
+      "name": "eCommerce Analytics",
+      "description": "Key performance indicators for eCommerce analytics.",
+      "confidence": 0.95,
+      "attributes": {
+        "definition": "Metrics that help eCommerce owners and marketers make data-driven decisions."
+      },
+      "source_chunk_id": "chunk_39"
     }
   ],
   "relationships": [
@@ -428,8 +1784,8 @@
       "subject_id": "3",
       "predicate": "hasDefinition",
       "object_id": "4",
-      "confidence": 0.9,
-      "context": "Abandoned cart percentage KPI is defined in relation to cart abandonment rate.",
+      "confidence": 0.95,
+      "context": "Abandoned cart percentage is defined as the cart abandonment rate.",
       "source_chunk_id": "chunk_2"
     },
     {
@@ -438,7 +1794,7 @@
       "predicate": "measures",
       "object_id": "6",
       "confidence": 0.9,
-      "context": "Site search usage metric relates to cart abandonment rate.",
+      "context": "Site search usage can enhance cart-to-detail rate.",
       "source_chunk_id": "chunk_2"
     },
     {
@@ -447,7 +1803,7 @@
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "KPI related to ecommerce performance.",
+      "context": "KPI related to advertising campaigns in online marketing.",
       "source_chunk_id": "chunk_3"
     },
     {
@@ -456,34 +1812,16 @@
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "KPIs specifically for ecommerce.",
+      "context": "Ecommerce KPIs are part of online marketing metrics.",
       "source_chunk_id": "chunk_3"
     },
     {
       "id": "rel_3",
-      "subject_id": "data_source_1",
-      "predicate": "locatedIn",
-      "object_id": "domain_1",
-      "confidence": 0.95,
-      "context": "Piwik PRO is used for ecommerce analytics.",
-      "source_chunk_id": "chunk_3"
-    },
-    {
-      "id": "rel_4",
-      "subject_id": "metric_1",
-      "predicate": "measures",
-      "object_id": "kpi_2",
-      "confidence": 0.9,
-      "context": "Funnel performance is a measure of ecommerce KPIs.",
-      "source_chunk_id": "chunk_3"
-    },
-    {
-      "id": "rel_5",
       "subject_id": "table_1",
       "predicate": "contains",
-      "object_id": "metric_1",
-      "confidence": 0.85,
-      "context": "Funnel Reports table contains metrics related to funnel performance.",
+      "object_id": "table_2",
+      "confidence": 0.8,
+      "context": "Piwik PRO Funnel Reports may include Shopping Behavior Reports.",
       "source_chunk_id": "chunk_3"
     },
     {
@@ -492,7 +1830,7 @@
       "predicate": "belongsTo",
       "object_id": "1",
       "confidence": 0.9,
-      "context": "KPIs related to ecommerce analytics",
+      "context": "KPIs for ecommerce",
       "source_chunk_id": "chunk_4"
     },
     {
@@ -501,7 +1839,7 @@
       "predicate": "locatedIn",
       "object_id": "1",
       "confidence": 0.95,
-      "context": "Piwik PRO as an analytics tool for ecommerce",
+      "context": "Piwik PRO Analytics Suite used for ecommerce analytics",
       "source_chunk_id": "chunk_4"
     },
     {
@@ -510,25 +1848,34 @@
       "predicate": "contains",
       "object_id": "6",
       "confidence": 0.85,
-      "context": "Customer Data Platform containing customer journey data",
+      "context": "Customer Journey table contains Customer ID",
       "source_chunk_id": "chunk_4"
     },
     {
       "id": "r4",
-      "subject_id": "5",
-      "predicate": "measures",
-      "object_id": "2",
-      "confidence": 0.8,
-      "context": "Conversion tracking as a measure of funnel performance",
+      "subject_id": "4",
+      "predicate": "contains",
+      "object_id": "7",
+      "confidence": 0.85,
+      "context": "Customer Journey table contains Transaction Date",
       "source_chunk_id": "chunk_4"
     },
     {
       "id": "r5",
-      "subject_id": "7",
-      "predicate": "calculatedBy",
-      "object_id": "5",
+      "subject_id": "4",
+      "predicate": "contains",
+      "object_id": "8",
+      "confidence": 0.85,
+      "context": "Customer Journey table contains Revenue Amount",
+      "source_chunk_id": "chunk_4"
+    },
+    {
+      "id": "r6",
+      "subject_id": "5",
+      "predicate": "measures",
+      "object_id": "2",
       "confidence": 0.8,
-      "context": "Conversion tracking calculated using a specific formula",
+      "context": "Conversion Tracking measures Funnel Performance",
       "source_chunk_id": "chunk_4"
     },
     {
@@ -543,11 +1890,137 @@
     {
       "id": "rel_2",
       "subject_id": "kpi_2",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_2",
+      "confidence": 0.9,
+      "context": "Definition of Average Order Value by Channel",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_3",
+      "subject_id": "kpi_3",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_3",
+      "confidence": 0.9,
+      "context": "Definition of Revenue per Visitor",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_4",
+      "subject_id": "kpi_4",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_4",
+      "confidence": 0.9,
+      "context": "Definition of Cart Abandonment Rate",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_5",
+      "subject_id": "kpi_5",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_5",
+      "confidence": 0.9,
+      "context": "Definition of Repeat Purchase Rate",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_6",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_1",
+      "confidence": 0.85,
+      "context": "Columns in the ecommerce funnel table",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_7",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_2",
+      "confidence": 0.85,
+      "context": "Columns in the ecommerce funnel table",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_8",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_3",
+      "confidence": 0.85,
+      "context": "Columns in the ecommerce funnel table",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_9",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_4",
+      "confidence": 0.85,
+      "context": "Columns in the ecommerce funnel table",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_10",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "KPI belongs to the Ecommerce domain",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_11",
+      "subject_id": "kpi_2",
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "Average Order Value by Channel belongs to Ecommerce domain",
+      "context": "KPI belongs to the Ecommerce domain",
       "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_12",
+      "subject_id": "kpi_3",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI belongs to the Ecommerce domain",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_13",
+      "subject_id": "kpi_4",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI belongs to the Ecommerce domain",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_14",
+      "subject_id": "kpi_5",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI belongs to the Ecommerce domain",
+      "source_chunk_id": "chunk_5"
+    },
+    {
+      "id": "rel_1",
+      "subject_id": "kpi_1",
+      "predicate": "calculatedBy",
+      "object_id": "metric_1",
+      "confidence": 0.95,
+      "context": "Description of Average Order Value",
+      "source_chunk_id": "chunk_6"
+    },
+    {
+      "id": "rel_2",
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI related to ecommerce performance",
+      "source_chunk_id": "chunk_6"
     },
     {
       "id": "rel_3",
@@ -555,53 +2028,1016 @@
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "Revenue per Visitor belongs to Ecommerce domain",
-      "source_chunk_id": "chunk_5"
+      "context": "KPI related to ecommerce performance",
+      "source_chunk_id": "chunk_6"
     },
     {
-      "id": "rel_4",
+      "id": "rel_1",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "KPI related to ecommerce marketing funnel",
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "rel_2",
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "KPI related to ecommerce marketing funnel",
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "rel_3",
+      "subject_id": "metric_1",
+      "predicate": "measures",
+      "object_id": "kpi_2",
+      "confidence": 0.9,
+      "context": "Metric derived from tracking organic traffic sessions",
+      "source_chunk_id": "chunk_7"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_1",
+      "predicate": "belongsTo",
+      "object_id": "entity_5",
+      "confidence": 0.9,
+      "context": "Piwik PRO vs. GA3 & GA4 is part of web analytics comparisons.",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_2",
+      "predicate": "belongsTo",
+      "object_id": "entity_5",
+      "confidence": 0.9,
+      "context": "Piwik PRO vs. Matomo is part of web analytics comparisons.",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_3",
+      "predicate": "belongsTo",
+      "object_id": "entity_5",
+      "confidence": 0.9,
+      "context": "Piwik PRO vs. Adobe Analytics is part of web analytics comparisons.",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "entity_4",
+      "predicate": "belongsTo",
+      "object_id": "entity_5",
+      "confidence": 0.9,
+      "context": "PP Tag Manager vs. GTM is part of web analytics comparisons.",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_5",
+      "subject_id": "entity_6",
+      "predicate": "measures",
+      "object_id": "entity_5",
+      "confidence": 0.9,
+      "context": "Maximizing Funnel Performance is a KPI relevant to web analytics.",
+      "source_chunk_id": "chunk_8"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "kpi_1",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_1",
+      "confidence": 0.95,
+      "context": "Definition of Keyword Performance",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "kpi_2",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_2",
+      "confidence": 0.95,
+      "context": "Definition of Click-Through Rate",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "kpi_3",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_3",
+      "confidence": 0.95,
+      "context": "Definition of Engagement Rate",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "kpi_4",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_4",
+      "confidence": 0.95,
+      "context": "Definition of Bounce Rate",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "relationship_5",
+      "subject_id": "metric_1",
+      "predicate": "calculatedBy",
+      "object_id": "metric_1",
+      "confidence": 0.9,
+      "context": "Calculation of Bounce Rate",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "relationship_6",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "Keyword Performance belongs to Ecommerce KPIs",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "relationship_7",
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "Click-Through Rate belongs to Ecommerce KPIs",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "relationship_8",
+      "subject_id": "kpi_3",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "Engagement Rate belongs to Ecommerce KPIs",
+      "source_chunk_id": "chunk_9"
+    },
+    {
+      "id": "relationship_9",
       "subject_id": "kpi_4",
       "predicate": "belongsTo",
       "object_id": "domain_1",
-      "confidence": 0.9,
-      "context": "Cart Abandonment Rate belongs to Ecommerce domain",
-      "source_chunk_id": "chunk_5"
+      "confidence": 0.95,
+      "context": "Bounce Rate belongs to Ecommerce KPIs",
+      "source_chunk_id": "chunk_9"
     },
     {
-      "id": "rel_5",
-      "subject_id": "kpi_5",
+      "id": "r1",
+      "subject_id": "4",
+      "predicate": "belongsTo",
+      "object_id": "1",
+      "confidence": 0.9,
+      "context": "KPI related to analytics",
+      "source_chunk_id": "chunk_10"
+    },
+    {
+      "id": "r2",
+      "subject_id": "5",
+      "predicate": "locatedIn",
+      "object_id": "1",
+      "confidence": 0.95,
+      "context": "Data source for analytics",
+      "source_chunk_id": "chunk_10"
+    },
+    {
+      "id": "r3",
+      "subject_id": "6",
+      "predicate": "contains",
+      "object_id": "4",
+      "confidence": 0.85,
+      "context": "Customer Data Platform contains KPIs for funnel performance",
+      "source_chunk_id": "chunk_10"
+    },
+    {
+      "id": "rel_1",
+      "subject_id": "kpi_1",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_1",
+      "confidence": 0.95,
+      "context": "Definition of ROI",
+      "source_chunk_id": "chunk_11"
+    },
+    {
+      "id": "rel_2",
+      "subject_id": "kpi_2",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_2",
+      "confidence": 0.9,
+      "context": "Definition of RPR",
+      "source_chunk_id": "chunk_11"
+    },
+    {
+      "id": "rel_3",
+      "subject_id": "kpi_1",
       "predicate": "belongsTo",
       "object_id": "domain_1",
       "confidence": 0.9,
-      "context": "Repeat Purchase Rate belongs to Ecommerce domain",
-      "source_chunk_id": "chunk_5"
+      "context": "ROI is a KPI in ecommerce analytics",
+      "source_chunk_id": "chunk_11"
     },
     {
-      "id": "rel_6",
-      "subject_id": "table_1",
-      "predicate": "contains",
-      "object_id": "kpi_1",
-      "confidence": 0.85,
-      "context": "ecommerce_funnel table contains KPIs",
-      "source_chunk_id": "chunk_5"
+      "id": "rel_4",
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "RPR is a KPI in ecommerce analytics",
+      "source_chunk_id": "chunk_11"
     },
     {
-      "id": "rel_7",
-      "subject_id": "table_1",
-      "predicate": "contains",
-      "object_id": "kpi_2",
-      "confidence": 0.85,
-      "context": "ecommerce_funnel table contains KPIs",
-      "source_chunk_id": "chunk_5"
-    },
-    {
-      "id": "rel_8",
+      "id": "rel_5",
       "subject_id": "data_source_1",
       "predicate": "locatedIn",
       "object_id": "domain_1",
       "confidence": 0.95,
-      "context": "Google Analytics is used in the Ecommerce domain",
-      "source_chunk_id": "chunk_5"
+      "context": "Piwik PRO is an analytics platform for ecommerce",
+      "source_chunk_id": "chunk_11"
+    },
+    {
+      "id": "rel_1",
+      "subject_id": "kpi_1",
+      "predicate": "calculatedBy",
+      "object_id": "formula_1",
+      "confidence": 0.95,
+      "context": "Calculation of Revenue per Visitor",
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "rel_2",
+      "subject_id": "kpi_2",
+      "predicate": "calculatedBy",
+      "object_id": "formula_2",
+      "confidence": 0.95,
+      "context": "Calculation of Customer Lifetime Value",
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "rel_3",
+      "subject_id": "kpi_3",
+      "predicate": "calculatedBy",
+      "object_id": "formula_3",
+      "confidence": 0.95,
+      "context": "Calculation of Repeat Purchase Rate",
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "rel_4",
+      "subject_id": "kpi_4",
+      "predicate": "calculatedBy",
+      "object_id": "formula_4",
+      "confidence": 0.9,
+      "context": "Calculation of Average Days Between Transactions",
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "rel_5",
+      "subject_id": "kpi_5",
+      "predicate": "calculatedBy",
+      "object_id": "formula_5",
+      "confidence": 0.9,
+      "context": "Evaluation of Top-Bought Products",
+      "source_chunk_id": "chunk_12"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_3",
+      "confidence": 0.9,
+      "context": "Google Analytics account setup",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_4",
+      "confidence": 0.9,
+      "context": "Google Analytics account setup",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_5",
+      "confidence": 0.9,
+      "context": "Google Analytics account setup",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_6",
+      "confidence": 0.9,
+      "context": "Google Analytics account setup",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "relationship_5",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_7",
+      "confidence": 0.9,
+      "context": "Google Analytics account setup",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "relationship_6",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_8",
+      "confidence": 0.9,
+      "context": "Google Analytics account setup",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "relationship_7",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_9",
+      "confidence": 0.9,
+      "context": "Google Analytics tracking setup",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "relationship_8",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_10",
+      "confidence": 0.9,
+      "context": "Google Analytics tracking setup",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "relationship_9",
+      "subject_id": "entity_2",
+      "predicate": "belongsTo",
+      "object_id": "entity_1",
+      "confidence": 0.9,
+      "context": "eCommerce analytics",
+      "source_chunk_id": "chunk_13"
+    },
+    {
+      "id": "1",
+      "subject_id": "1",
+      "predicate": "hasDefinition",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "Definition of Average Order Value in the context of eCommerce analytics",
+      "source_chunk_id": "chunk_14"
+    },
+    {
+      "id": "1",
+      "subject_id": "1",
+      "predicate": "belongsTo",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "CPL is used in the context of marketing to evaluate lead generation effectiveness.",
+      "source_chunk_id": "chunk_16"
+    },
+    {
+      "id": "r1",
+      "subject_id": "1",
+      "predicate": "hasDefinition",
+      "object_id": "1",
+      "confidence": 0.95,
+      "context": "Definition of Customer Acquisition Cost",
+      "source_chunk_id": "chunk_18"
+    },
+    {
+      "id": "r2",
+      "subject_id": "2",
+      "predicate": "calculatedBy",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "Formula for calculating Customer Acquisition Cost",
+      "source_chunk_id": "chunk_18"
+    },
+    {
+      "id": "r3",
+      "subject_id": "1",
+      "predicate": "locatedIn",
+      "object_id": "3",
+      "confidence": 0.85,
+      "context": "Source of Customer Acquisition Cost information",
+      "source_chunk_id": "chunk_18"
+    },
+    {
+      "id": "r4",
+      "subject_id": "1",
+      "predicate": "belongsTo",
+      "object_id": "4",
+      "confidence": 0.9,
+      "context": "Customer Acquisition Cost belongs to Sales & Marketing domain",
+      "source_chunk_id": "chunk_18"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_1",
+      "predicate": "hasDefinition",
+      "object_id": "entity_1",
+      "confidence": 0.95,
+      "context": "Definition of Click-Through Rate",
+      "source_chunk_id": "chunk_19"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_2",
+      "predicate": "calculatedBy",
+      "object_id": "entity_2",
+      "confidence": 0.95,
+      "context": "Formula for Click-Through Rate",
+      "source_chunk_id": "chunk_19"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_1",
+      "predicate": "belongsTo",
+      "object_id": "entity_3",
+      "confidence": 0.9,
+      "context": "Click-Through Rate as a KPI in Marketing",
+      "source_chunk_id": "chunk_19"
+    },
+    {
+      "id": "1",
+      "subject_id": "1",
+      "predicate": "hasDefinition",
+      "object_id": "1",
+      "confidence": 0.95,
+      "context": "Definition of NPS",
+      "source_chunk_id": "chunk_20"
+    },
+    {
+      "id": "2",
+      "subject_id": "1",
+      "predicate": "contains",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "NPS classification of customers",
+      "source_chunk_id": "chunk_20"
+    },
+    {
+      "id": "3",
+      "subject_id": "1",
+      "predicate": "contains",
+      "object_id": "3",
+      "confidence": 0.9,
+      "context": "NPS classification of customers",
+      "source_chunk_id": "chunk_20"
+    },
+    {
+      "id": "4",
+      "subject_id": "1",
+      "predicate": "contains",
+      "object_id": "4",
+      "confidence": 0.9,
+      "context": "NPS classification of customers",
+      "source_chunk_id": "chunk_20"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_1",
+      "predicate": "locatedIn",
+      "object_id": "entity_2",
+      "confidence": 0.9,
+      "context": "Google Analytics is used to measure website traffic.",
+      "source_chunk_id": "chunk_21"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_1",
+      "predicate": "contains",
+      "object_id": "entity_4",
+      "confidence": 0.95,
+      "context": "Google Analytics uses a tracking ID to gather data.",
+      "source_chunk_id": "chunk_21"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_1",
+      "predicate": "measures",
+      "object_id": "entity_2",
+      "confidence": 0.9,
+      "context": "Google Analytics measures website traffic.",
+      "source_chunk_id": "chunk_21"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "entity_1",
+      "predicate": "measures",
+      "object_id": "entity_3",
+      "confidence": 0.9,
+      "context": "Google Analytics measures user behavior.",
+      "source_chunk_id": "chunk_21"
+    },
+    {
+      "id": "r1",
+      "subject_id": "1",
+      "predicate": "belongsTo",
+      "object_id": "3",
+      "confidence": 0.9,
+      "context": "The Repeat Purchase Rate is an important measure of customer satisfaction and loyalty.",
+      "source_chunk_id": "chunk_22"
+    },
+    {
+      "id": "r2",
+      "subject_id": "2",
+      "predicate": "calculatedBy",
+      "object_id": "1",
+      "confidence": 0.9,
+      "context": "The Repeat Purchase Rate is calculated using a specific formula.",
+      "source_chunk_id": "chunk_22"
+    },
+    {
+      "id": "r3",
+      "subject_id": "4",
+      "predicate": "hasDefinition",
+      "object_id": "4",
+      "confidence": 0.85,
+      "context": "Definition of Customer Lifetime Value.",
+      "source_chunk_id": "chunk_22"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_1",
+      "predicate": "hasDefinition",
+      "object_id": "entity_1",
+      "confidence": 0.95,
+      "context": "Definition of Engagement Rate",
+      "source_chunk_id": "chunk_23"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_1",
+      "predicate": "dependsOn",
+      "object_id": "entity_3",
+      "confidence": 0.9,
+      "context": "Engagement Rate calculation criteria",
+      "source_chunk_id": "chunk_23"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_1",
+      "predicate": "locatedIn",
+      "object_id": "entity_2",
+      "confidence": 0.95,
+      "context": "Engagement Rate is measured using Google Analytics 4",
+      "source_chunk_id": "chunk_23"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "entity_4",
+      "predicate": "hasDefinition",
+      "object_id": "entity_4",
+      "confidence": 0.9,
+      "context": "Definition of Conversion Stage KPIs",
+      "source_chunk_id": "chunk_23"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_1",
+      "confidence": 0.9,
+      "context": "Table structure for pricing plans",
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_2",
+      "confidence": 0.9,
+      "context": "Table structure for pricing plans",
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_3",
+      "confidence": 0.9,
+      "context": "Table structure for pricing plans",
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "table_1",
+      "predicate": "contains",
+      "object_id": "column_4",
+      "confidence": 0.9,
+      "context": "Table structure for pricing plans",
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "relationship_5",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "KPI related to eCommerce analytics",
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "relationship_6",
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "KPI related to eCommerce analytics",
+      "source_chunk_id": "chunk_24"
+    },
+    {
+      "id": "r1",
+      "subject_id": "1",
+      "predicate": "belongsTo",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "Cost Per Lead is a key performance indicator in the Advertising domain.",
+      "source_chunk_id": "chunk_25"
+    },
+    {
+      "id": "r2",
+      "subject_id": "1",
+      "predicate": "locatedIn",
+      "object_id": "3",
+      "confidence": 0.85,
+      "context": "Cost Per Lead is generated through ads on a third-party website.",
+      "source_chunk_id": "chunk_25"
+    },
+    {
+      "id": "r3",
+      "subject_id": "4",
+      "predicate": "derivedFrom",
+      "object_id": "1",
+      "confidence": 0.8,
+      "context": "Average CPL is derived from the Cost Per Lead metric.",
+      "source_chunk_id": "chunk_25"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "data_source_1",
+      "predicate": "contains",
+      "object_id": "kpi_1",
+      "confidence": 0.9,
+      "context": "Kissmetrics provides funnel performance analysis features.",
+      "source_chunk_id": "chunk_26"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "data_source_2",
+      "predicate": "contains",
+      "object_id": "metric_1",
+      "confidence": 0.9,
+      "context": "Hotjar provides insights into user behavior.",
+      "source_chunk_id": "chunk_26"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "data_source_3",
+      "predicate": "contains",
+      "object_id": "metric_1",
+      "confidence": 0.9,
+      "context": "Mixpanel offers comprehensive reporting on user behavior.",
+      "source_chunk_id": "chunk_26"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "kpi_1",
+      "predicate": "hasDefinition",
+      "object_id": "kpi_1",
+      "confidence": 0.95,
+      "context": "Definition provided in the text",
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "kpi_1",
+      "predicate": "measures",
+      "object_id": "kpi_1",
+      "confidence": 0.95,
+      "context": "Described as an important metric affecting marketing strategies",
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "kpi_1",
+      "predicate": "dependsOn",
+      "object_id": "kpi_2",
+      "confidence": 0.9,
+      "context": "Mentioned alongside other KPIs for best results",
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "kpi_1",
+      "predicate": "dependsOn",
+      "object_id": "kpi_3",
+      "confidence": 0.9,
+      "context": "Mentioned alongside other KPIs for best results",
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "relationship_5",
+      "subject_id": "kpi_1",
+      "predicate": "dependsOn",
+      "object_id": "kpi_4",
+      "confidence": 0.9,
+      "context": "Mentioned alongside other KPIs for best results",
+      "source_chunk_id": "chunk_27"
+    },
+    {
+      "id": "1",
+      "subject_id": "1",
+      "predicate": "hasDefinition",
+      "object_id": "1",
+      "confidence": 0.95,
+      "context": "Definition of CPM",
+      "source_chunk_id": "chunk_28"
+    },
+    {
+      "id": "2",
+      "subject_id": "2",
+      "predicate": "hasDefinition",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "Definition of Click-through Rate",
+      "source_chunk_id": "chunk_28"
+    },
+    {
+      "id": "3",
+      "subject_id": "1",
+      "predicate": "belongsTo",
+      "object_id": "3",
+      "confidence": 0.85,
+      "context": "CPM is a KPI in eCommerce Analytics",
+      "source_chunk_id": "chunk_28"
+    },
+    {
+      "id": "4",
+      "subject_id": "2",
+      "predicate": "belongsTo",
+      "object_id": "3",
+      "confidence": 0.85,
+      "context": "Click-through Rate is a KPI in eCommerce Analytics",
+      "source_chunk_id": "chunk_28"
+    },
+    {
+      "id": "1",
+      "subject_id": "1",
+      "predicate": "hasDefinition",
+      "object_id": "1",
+      "confidence": 0.95,
+      "context": "Definition of Customer Satisfaction Score",
+      "source_chunk_id": "chunk_29"
+    },
+    {
+      "id": "2",
+      "subject_id": "1",
+      "predicate": "calculatedBy",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "Calculation method for CSAT",
+      "source_chunk_id": "chunk_29"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI related to the awareness stage of the customer journey.",
+      "source_chunk_id": "chunk_30"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "kpi_2",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI related to the awareness stage of the customer journey.",
+      "source_chunk_id": "chunk_30"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "kpi_1",
+      "predicate": "locatedIn",
+      "object_id": "data_source_1",
+      "confidence": 0.9,
+      "context": "KPI tracked using Google Analytics.",
+      "source_chunk_id": "chunk_30"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "kpi_2",
+      "predicate": "locatedIn",
+      "object_id": "data_source_1",
+      "confidence": 0.9,
+      "context": "KPI tracked using Google Analytics.",
+      "source_chunk_id": "chunk_30"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_2",
+      "predicate": "locatedIn",
+      "object_id": "entity_1",
+      "confidence": 0.9,
+      "context": "The Shopping Behavior Report is generated from Google Analytics.",
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_3",
+      "predicate": "locatedIn",
+      "object_id": "entity_1",
+      "confidence": 0.9,
+      "context": "The Checkout Behavior Report is generated from Google Analytics.",
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_4",
+      "predicate": "measures",
+      "object_id": "entity_2",
+      "confidence": 0.85,
+      "context": "Funnel Performance measures insights from the Shopping Behavior Report.",
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "entity_5",
+      "predicate": "measures",
+      "object_id": "entity_3",
+      "confidence": 0.85,
+      "context": "User Retention measures insights from the Checkout Behavior Report.",
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "relationship_5",
+      "subject_id": "entity_2",
+      "predicate": "contains",
+      "object_id": "entity_6",
+      "confidence": 0.8,
+      "context": "The Shopping Behavior Report contains segmentations based on user attributes.",
+      "source_chunk_id": "chunk_31"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_1",
+      "predicate": "locatedIn",
+      "object_id": "entity_3",
+      "confidence": 0.9,
+      "context": "Google Analytics is used within the eCommerce Analytics domain.",
+      "source_chunk_id": "chunk_32"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_2",
+      "predicate": "belongsTo",
+      "object_id": "entity_3",
+      "confidence": 0.9,
+      "context": "Goals are a KPI within the eCommerce Analytics domain.",
+      "source_chunk_id": "chunk_32"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_4",
+      "predicate": "contains",
+      "object_id": "entity_1",
+      "confidence": 0.85,
+      "context": "GTM Container is used to manage Google Analytics tags.",
+      "source_chunk_id": "chunk_32"
+    },
+    {
+      "id": "1",
+      "subject_id": "1",
+      "predicate": "hasDefinition",
+      "object_id": "1",
+      "confidence": 0.95,
+      "context": "Definition of Cart Abandonment Rate",
+      "source_chunk_id": "chunk_33"
+    },
+    {
+      "id": "2",
+      "subject_id": "1",
+      "predicate": "calculatedBy",
+      "object_id": "2",
+      "confidence": 0.9,
+      "context": "Calculation method for Cart Abandonment Rate",
+      "source_chunk_id": "chunk_33"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "The article discusses eCommerce KPIs within the context of eCommerce analytics.",
+      "source_chunk_id": "chunk_34"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "data_source_1",
+      "predicate": "locatedIn",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "Google Analytics is a tool used within the eCommerce analytics domain.",
+      "source_chunk_id": "chunk_34"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "entity_1",
+      "predicate": "locatedIn",
+      "object_id": "entity_6",
+      "confidence": 0.9,
+      "context": "Google Analytics is used to track eCommerce Analytics KPIs.",
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "entity_2",
+      "predicate": "locatedIn",
+      "object_id": "entity_6",
+      "confidence": 0.9,
+      "context": "Adobe Marketing Cloud is used to track eCommerce Analytics KPIs.",
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "relationship_3",
+      "subject_id": "entity_3",
+      "predicate": "locatedIn",
+      "object_id": "entity_6",
+      "confidence": 0.85,
+      "context": "Kissmetrics is used to track eCommerce Analytics KPIs.",
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "relationship_4",
+      "subject_id": "entity_4",
+      "predicate": "locatedIn",
+      "object_id": "entity_6",
+      "confidence": 0.85,
+      "context": "Hotjar is used to track eCommerce Analytics KPIs.",
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "relationship_5",
+      "subject_id": "entity_5",
+      "predicate": "locatedIn",
+      "object_id": "entity_6",
+      "confidence": 0.85,
+      "context": "Mixpanel is used to track eCommerce Analytics KPIs.",
+      "source_chunk_id": "chunk_35"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "Discussion of important KPIs for eCommerce",
+      "source_chunk_id": "chunk_36"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "KPI related to eCommerce analytics",
+      "source_chunk_id": "chunk_37"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "data_source_1",
+      "predicate": "locatedIn",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "EngageBay as a data source for eCommerce analytics",
+      "source_chunk_id": "chunk_37"
+    },
+    {
+      "id": "relationship_1",
+      "subject_id": "kpi_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.95,
+      "context": "KPI related to eCommerce analytics",
+      "source_chunk_id": "chunk_38"
+    },
+    {
+      "id": "relationship_2",
+      "subject_id": "metric_1",
+      "predicate": "belongsTo",
+      "object_id": "domain_1",
+      "confidence": 0.9,
+      "context": "Metric related to eCommerce analytics",
+      "source_chunk_id": "chunk_38"
     }
   ]
 }
