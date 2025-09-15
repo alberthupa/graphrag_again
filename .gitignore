@@ -12,7 +12,11 @@ wheels/
 
 /sources
 sources/
+/sources_all
+sources_all/
 
 *.png
 *.db
 *.htmn
+
+chroma/

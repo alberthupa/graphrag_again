@@ -375,12 +375,15 @@ class ConnectionDiscoverer:
         type_boost = 1.0 if entity1.type == entity2.type else 0.8
         features["type_compatibility"] = type_boost
         
-        # Overall similarity
-        overall_similarity = (
+        # Overall similarity (normalize by total weight and clamp to [0,1])
+        total_weight = self.name_weight + self.description_weight + 0.2
+        weighted_sum = (
             name_sim * self.name_weight +
             desc_sim * self.description_weight +
             attr_sim * 0.2
-        ) * type_boost
+        )
+        base_similarity = weighted_sum / total_weight if total_weight > 0 else 0.0
+        overall_similarity = max(0.0, min(1.0, base_similarity * type_boost))
         
         return overall_similarity, features
     
@@ -664,7 +667,7 @@ class ConnectionDiscoverer:
         # Combine pattern strength with entity similarity
         confidence = (pattern_strength * 0.6 + similarity * 0.4)
         
-        return confidence
+        return min(1.0, max(0.0, confidence))
     
     def _deduplicate_discoveries(self, discoveries: List[ConnectionDiscovery]) -> List[ConnectionDiscovery]:
         """Remove duplicate discoveries, keeping the highest confidence one."""
